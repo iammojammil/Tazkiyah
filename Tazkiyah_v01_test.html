@@ -383,11 +383,14 @@ html{font-size:calc(16px*var(--fz,1))}body{font-size:calc(15px*var(--fz,1))}
 </style>
 <style id="rkcss"></style>
 <style id="dscss">
-.dsw{position:relative;margin:4px -4px 0}
-.dst{--st:37px;gap:4px;perspective:700px;perspective-origin:50% 50%;scroll-snap-type:x mandatory;scrollbar-width:none;padding:26px calc(50% - (var(--st) - 4px)/2) 30px}
-.dst .dt{flex:0 0 calc(var(--st) - 4px);width:calc(var(--st) - 4px);height:64px;border-radius:11px;gap:4px;scroll-snap-align:center;scroll-snap-stop:always;will-change:transform;transform-origin:50% 50%}
-.dst .dt small{font-size:.58rem;font-weight:500}
-.dst .dt b{font-size:1rem;font-weight:700}
+.dsw{position:relative;margin:0 -20px}
+.dst{--st:47px;gap:6px;scroll-snap-type:x mandatory;scrollbar-width:none;padding:14px calc(50% - (var(--st) - 6px)/2) 26px}
+.dst .dt{flex:0 0 calc(var(--st) - 6px);width:calc(var(--st) - 6px);height:var(--h,60px);border-radius:10px;gap:5px;scroll-snap-align:center;scroll-snap-stop:always}
+.dst .dt small{font-size:.6rem;font-weight:500}
+.dst .dt b{font-size:var(--f,1.02rem);font-weight:700}
+.dtb{top:-4px}
+#hero,#qs,.ph,.pbar{display:none!important}
+.sh{margin-top:6px}
 </style>
 <style id="authgate">body{visibility:hidden}</style>
 </head>
@@ -462,7 +465,7 @@ html{font-size:calc(16px*var(--fz,1))}body{font-size:calc(15px*var(--fz,1))}
     <div class="msg" id="bm"></div></div>
   <button class="lk" data-a="wipe">সব ডেটা মুছে নতুন করে শুরু</button>
   <button class="lk" data-a="swap">মোড বদলান (ট্রেনিং / নিয়মিত)</button>
-  <div class="ver">Tazkiyah v01 · A48</div>
+  <div class="ver">Tazkiyah v01 · A49</div>
 </section>
 
 <section class="pg" id="p-train" style="padding:0 0 100px"><div id="train-host"></div></section>
@@ -564,12 +567,12 @@ let DSTEP=37;const DBACK=90,DFWD=3,DWD=["রবি","সোম","মঙ্গল
 let dsBuilt="",dsT=0,dsN=-1;
 const dsDay=i=>{const d=new Date(today);d.setDate(d.getDate()+i-DBACK);return d};
 function dsBuild(){const st=$("dst");if(!st||dsBuilt===key(today))return;dsBuilt=key(today);let h="";for(let i=0;i<=DBACK+DFWD;i++){const d=dsDay(i);h+=`<button class="dt${i>DBACK?" fu":""}${i===DBACK?" tdy":""}" data-a="dpick" data-v="${i}"><small>${DWD[d.getDay()]}</small><b>${bn(d.getDate())}</b></button>`}st.innerHTML=h;st.onscroll=dsScroll;st.ontouchstart=()=>{cancelAnimationFrame(dsA);st.style.scrollSnapType=""};dsN=-1}
-function tileFx(e,sd,on){const d=Math.abs(sd),sc=d<=1?1.25-.25*d:Math.max(.5,Math.pow(.86,d-1)),P=d<=1?100-62*d:Math.max(7,38*Math.pow(.7,d-1)),g=Math.max(0,1-d),a=Math.sign(-sd)*Math.min(d,3)*11;e.style.setProperty('--p',P.toFixed(1)+'%');e.style.setProperty('--g',g.toFixed(3));e.style.setProperty('--tc',P>=40?'var(--on)':'color-mix(in srgb,var(--ac) 75%,var(--bg))');e.style.transform='scale('+sc.toFixed(3)+') rotateY('+a.toFixed(1)+'deg)';e.style.zIndex=Math.round(10-d);e.classList.toggle('on',on)}
+function tileFx(e,sd,on){const d=Math.abs(sd),H=d<=1?76-9*d:Math.max(40,67-5.5*(d-1)),P=d<=1?100-48*d:Math.max(8,52*Math.pow(.72,d-1)),g=Math.max(0,1-d);e.style.setProperty('--p',P.toFixed(1)+'%');e.style.setProperty('--h',H.toFixed(1)+'px');e.style.setProperty('--f',(1.02+.38*g).toFixed(3)+'rem');e.style.setProperty('--g',g.toFixed(3));e.style.setProperty('--tc',P>=45?'var(--on)':'color-mix(in srgb,var(--ac) 80%,var(--bg))');e.classList.toggle('on',on)}
 function dsFx(){const st=$("dst");if(!st)return;const x=st.scrollLeft/DSTEP,n=Math.round(x),c=st.children,a=Math.max(0,Math.min(n,dsN<0?n:dsN)-7),b=Math.min(c.length-1,Math.max(n,dsN)+7);for(let i=a;i<=b;i++)tileFx(c[i],x-i,i===n);dsN=n}
 function dsScroll(){dsFx();clearTimeout(dsT);dsT=setTimeout(dsSettle,120)}
 let dsA=0;
 function dsSlow(st,to){cancelAnimationFrame(dsA);const f=st.scrollLeft,dist=to-f;if(Math.abs(dist)<1)return;const dur=Math.min(1100,380+Math.abs(dist)/DSTEP*140),t0=performance.now();st.style.scrollSnapType='none';const step=t=>{const p=Math.min(1,(t-t0)/dur),e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;st.scrollLeft=f+dist*e;if(p<1)dsA=requestAnimationFrame(step);else st.style.scrollSnapType=''};dsA=requestAnimationFrame(step)}
-function dsMeasure(){const st=$("dst");if(!st||!st.clientWidth)return;DSTEP=Math.max(28,Math.min(60,(st.clientWidth/2-.55)/4.8625));st.style.setProperty('--st',DSTEP.toFixed(2)+'px')}
+function dsMeasure(){const st=$("dst");if(!st||!st.clientWidth)return;DSTEP=Math.max(36,Math.min(64,(st.clientWidth/2-1.2)/3.8));st.style.setProperty('--st',DSTEP.toFixed(2)+'px')}
 function dsGo(i,smooth){const st=$("dst");if(!st)return;if(smooth)dsSlow(st,i*DSTEP);else st.scrollLeft=i*DSTEP}
 function dsSettle(){const st=$("dst");if(!st||!st.offsetWidth)return;const n=Math.max(0,Math.round(st.scrollLeft/DSTEP));if(n>DBACK){dsGo(DBACK,true);return}const d=dsDay(n);if(key(d)!==key(cur)){cur=d;home()}}
 function dsSync(){dsBuild();const st=$("dst");if(!st)return;if(!window.__dsr){window.__dsr=1;addEventListener("resize",()=>{dsSync()})}dsMeasure();$("dtb").hidden=key(cur)===key(today);if(!st.offsetWidth)return;const i=Math.max(0,DBACK+Math.round((cur-today)/864e5));if(Math.abs(st.scrollLeft-i*DSTEP)>2)st.scrollLeft=i*DSTEP;dsFx()}
@@ -901,10 +904,10 @@ let SSTEP=37;const SDB=90,SDF=3,SWD=['রবি','সোম','মঙ্গল','
 const sday=i=>{const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()+i-SDB);return d};
 const stripHtml=()=>{let h='';for(let i=0;i<=SDB+SDF;i++){const d=sday(i);h+=`<button class="xt${i>SDB?' fu':''}${i===SDB?' td':''}" data-a="dpick" data-i="${i}"><small>${SWD[d.getDay()]}</small><b>${bn(d.getDate())}</b></button>`}return `<div class="xw"><button class="xb" data-a="dtoday" id="xb" hidden>আজকে ফিরুন</button><div class="xs" id="xs">${h}</div></div>`};
 let sA=0;function sgo(i,sm){const st=root.getElementById('xs');if(!st)return;if(!sm){st.scrollLeft=i*SSTEP;return}cancelAnimationFrame(sA);const f=st.scrollLeft,to=i*SSTEP,dist=to-f;if(Math.abs(dist)<1)return;const dur=Math.min(1100,380+Math.abs(dist)/SSTEP*140),t0=performance.now();st.style.scrollSnapType='none';const step=t=>{const p=Math.min(1,(t-t0)/dur),e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;st.scrollLeft=f+dist*e;if(p<1)sA=requestAnimationFrame(step);else st.style.scrollSnapType=''};sA=requestAnimationFrame(step)}
-function tileFx(e,sd,on){const d=Math.abs(sd),sc=d<=1?1.25-.25*d:Math.max(.5,Math.pow(.86,d-1)),P=d<=1?100-62*d:Math.max(7,38*Math.pow(.7,d-1)),g=Math.max(0,1-d),a=Math.sign(-sd)*Math.min(d,3)*11;e.style.setProperty('--p',P.toFixed(1)+'%');e.style.setProperty('--g',g.toFixed(3));e.style.setProperty('--tc',P>=40?'var(--on)':'color-mix(in srgb,var(--ac) 75%,var(--bg))');e.style.transform='scale('+sc.toFixed(3)+') rotateY('+a.toFixed(1)+'deg)';e.style.zIndex=Math.round(10-d);e.classList.toggle('on',on)}
+function tileFx(e,sd,on){const d=Math.abs(sd),H=d<=1?76-9*d:Math.max(40,67-5.5*(d-1)),P=d<=1?100-48*d:Math.max(8,52*Math.pow(.72,d-1)),g=Math.max(0,1-d);e.style.setProperty('--p',P.toFixed(1)+'%');e.style.setProperty('--h',H.toFixed(1)+'px');e.style.setProperty('--f',(1.02+.38*g).toFixed(3)+'rem');e.style.setProperty('--g',g.toFixed(3));e.style.setProperty('--tc',P>=45?'var(--on)':'color-mix(in srgb,var(--ac) 80%,var(--bg))');e.classList.toggle('on',on)}
 function sfx(st){const x=st.scrollLeft/SSTEP,n=Math.round(x),c=st.children,a=Math.max(0,Math.min(n,sN<0?n:sN)-7),b=Math.min(c.length-1,Math.max(n,sN)+7);for(let i=a;i<=b;i++)tileFx(c[i],x-i,i===n);sN=n}
 function sSettle(st){if(!st.isConnected||!st.offsetWidth)return;const n=Math.max(0,Math.round(st.scrollLeft/SSTEP));if(n>SDB){sgo(SDB,true);return}const k=dk(sday(n));if(k!==SD){SD=k;const y=window.scrollY;render();window.scrollTo(0,y)}}
-function tzStrip(){const st=root.getElementById('xs');sN=-1;if(!st)return;if(st.clientWidth){SSTEP=Math.max(28,Math.min(60,(st.clientWidth/2-.55)/4.8625));st.style.setProperty('--st',SSTEP.toFixed(2)+'px')}st.ontouchstart=()=>{cancelAnimationFrame(sA);st.style.scrollSnapType=''};const b=root.getElementById('xb');if(b)b.hidden=SD===T;if(st.offsetWidth){const i=Math.max(0,SDB+Math.round((new Date(SD+'T12:00:00')-sday(SDB))/864e5));st.scrollLeft=i*SSTEP;sfx(st)}st.addEventListener('scroll',()=>{sfx(st);clearTimeout(sT);sT=setTimeout(()=>sSettle(st),120)})}
+function tzStrip(){const st=root.getElementById('xs');sN=-1;if(!st)return;if(st.clientWidth){SSTEP=Math.max(36,Math.min(64,(st.clientWidth/2-1.2)/3.8));st.style.setProperty('--st',SSTEP.toFixed(2)+'px')}st.ontouchstart=()=>{cancelAnimationFrame(sA);st.style.scrollSnapType=''};const b=root.getElementById('xb');if(b)b.hidden=SD===T;if(st.offsetWidth){const i=Math.max(0,SDB+Math.round((new Date(SD+'T12:00:00')-sday(SDB))/864e5));st.scrollLeft=i*SSTEP;sfx(st)}st.addEventListener('scroll',()=>{sfx(st);clearTimeout(sT);sT=setTimeout(()=>sSettle(st),120)})}
 const cnt=(d=T)=>ALL.filter(k=>D(d)[k]).length;
 const active=d=>cnt(d)>0;
 const total=()=>Object.keys(S.days).filter(active).length;
@@ -1028,7 +1031,7 @@ const _vp=V.pray;V.pray=function(){const h=_vp(),m='<div class="note">হান�
 {const st=document.createElement('style');st.textContent='.rw{padding:9px 0;gap:11px}.rw .dm{margin-top:0}.rw .ck{margin-top:1px}.rn{font-size:15px;line-height:1.35}.rn .tag{margin-left:6px;padding:0 8px;font-size:11.5px}.rm{margin-top:2px;font-size:12px;line-height:1.45}.rh{margin-top:2px;font-size:12.5px;line-height:1.5;opacity:.78}.rt>.mr{display:inline-block;margin:0 0 -6px;padding:6px 0;font-size:13px}.rw.on .rh{opacity:.6}.gx{padding:8px 0 6px}.gp{padding:2px 16px 4px;margin-top:10px}.dt{margin-top:8px;padding:4px 12px 8px}.mr.ab{margin-top:8px;padding:7px 14px}';root.appendChild(st)}
 {const st=document.createElement('style');st.textContent='.gs{margin-top:16px}.gs .gx{border-bottom:1px solid var(--line);padding:6px 2px 8px}.gs .gi2{width:34px;height:34px;border-radius:11px}.gs .gi2 svg{width:19px;height:19px}.gs .gtt b{font-size:15px}.gs .note{margin:8px 0 0}.ri{border-bottom:1px solid var(--line)}.ri:last-child{border-bottom:0}.ri>.rw{align-items:center;padding:10px 2px;border-bottom:0;gap:12px}.ri>.rw .dm,.ri>.rw .ck{margin-top:0}.ex{flex:none;width:30px;height:30px;border-radius:50%;border:0;background:var(--soft);color:var(--ac);display:grid;place-items:center;padding:0;cursor:pointer}.ex svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}.ex.o svg{transform:rotate(180deg)}.ri>.rw>.chv{flex:none;width:30px;display:grid;place-items:center}.dt2{margin:0 0 10px 44px;background:var(--soft);border-radius:14px;padding:10px 14px 12px}.dt2 .hw{margin:0 0 4px;font-size:13px;line-height:1.6}.dt2 .ar{font-size:23px;line-height:2.1;margin:2px 0}.dt2 p{margin:5px 0;font-size:13.5px;line-height:1.65}.dt2 .mr{margin-top:6px}.hnt{margin:12px 2px 0;font-size:12.5px}';root.appendChild(st)}
 {const st=document.createElement('style');st.textContent='.rn .cn{font-size:12.5px;font-weight:600;color:var(--ac);white-space:nowrap}.rh{margin-top:2px;opacity:.85}.gs .gx{border-bottom:0;padding-bottom:2px}.rn{font-size:1.02rem}.rn .cn{font-size:.85rem}.rh{font-size:.82rem}.gh{display:flex;justify-content:space-between;align-items:baseline;margin:16px 2px 0;font-size:.82rem;color:var(--mut);font-weight:500}.gs{margin-top:0;padding:0 4px}.ri{border-bottom:0;position:relative}.ri::after{content:"";position:absolute;left:10px;right:10px;bottom:0;border-bottom:1px solid var(--line)}.ri:last-child::after{display:none}.ri>.rw{padding:12px 10px}.dt2{margin:0 10px 10px 54px}.rn{font-weight:500;line-height:1.45}.rw.on .rn{opacity:.8}';root.appendChild(st)}
-{const st=document.createElement('style');st.textContent='.xw{position:relative;margin:4px -4px 0}.xs{--st:37px;gap:4px;perspective:700px;perspective-origin:50% 50%;scroll-snap-type:x mandatory;scrollbar-width:none;padding:26px calc(50% - (var(--st) - 4px)/2) 30px}.xt{flex:0 0 calc(var(--st) - 4px);width:calc(var(--st) - 4px);height:64px;border-radius:11px;gap:4px;scroll-snap-align:center;scroll-snap-stop:always;will-change:transform;transform-origin:50% 50%}.xt small{font-size:.58rem;font-weight:500}.xt b{font-size:1rem;font-weight:700}';root.appendChild(st)}
+{const st=document.createElement('style');st.textContent='.xw{position:relative;margin:0 -16px}.xs{--st:47px;gap:6px;scroll-snap-type:x mandatory;scrollbar-width:none;padding:14px calc(50% - (var(--st) - 6px)/2) 26px}.xt{flex:0 0 calc(var(--st) - 6px);width:calc(var(--st) - 6px);height:var(--h,60px);border-radius:10px;gap:5px;scroll-snap-align:center;scroll-snap-stop:always}.xt small{font-size:.6rem;font-weight:500}.xt b{font-size:var(--f,1.02rem);font-weight:700}';root.appendChild(st)}
 /* ===== রেন্ডার ও ইভেন্ট ===== */
 let R='home',RH=[];function render(){onHome=(R==='home');app.innerHTML=(V[R]||V.home)();tzStrip();}
 app.addEventListener('click',e=>{if(e.target.closest('[data-a="swap"]')){window.tzSwap();return}if(e.target.closest('[data-a="tth"]')){document.querySelector('#thm .tg').click();return}const t=e.target.closest('[data-a]');if(!t)return;const a=t.dataset.a,k=t.dataset.k,y=window.scrollY;if(a==='dpick'){const i=+t.dataset.i;if(i<=SDB)sgo(i,true);return}if(a==='dtoday'){sgo(SDB,true);return}
