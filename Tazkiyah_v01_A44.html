@@ -372,6 +372,7 @@ html{font-size:calc(16px*var(--fz,1))}body{font-size:calc(15px*var(--fz,1))}
 .bxl{margin-top:4px}.bxr{position:relative}.bxh{display:flex;align-items:center;gap:14px;padding:12px 10px;border-radius:16px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .25s}.bxr.op .bxh{background:color-mix(in srgb,var(--ac) 8%,transparent)}.bxr::after{content:"";position:absolute;left:10px;right:10px;bottom:0;height:1px;background:var(--line)}.bxr:last-child::after,.bxr.op::after{display:none}.bxt{flex:1;min-width:0}.bxt b{display:block;font-size:1.02rem;font-weight:500;line-height:1.45}.bxt small{color:var(--mut);font-size:.8rem}.bxc{flex:none;color:var(--mut);transition:transform .2s}.bxr.op .bxc{transform:rotate(180deg)}.bxb{display:none;margin:2px 12px 14px 56px;font-size:.92rem;line-height:1.7}.bxr.op .bxb{display:block}.bxb s{display:block;color:var(--mut);text-decoration-color:#b9503a;margin-bottom:6px}.bxb .ok{color:var(--ac);font-weight:500;margin-bottom:6px}
 </style>
 <style id="rkcss"></style>
+<style id="authgate">body{visibility:hidden}</style>
 </head>
 <body>
 <div class="tzc" id="ch"><div class="w"><div style="text-align:center;margin:8px 0 22px"><div style="font-size:1.5rem;font-weight:700;color:var(--ac);letter-spacing:.3px">Tazkiyah</div><div style="font-size:.82rem;color:var(--mut)">বিসমিল্লাহির রাহমানির রাহিম</div></div><h2>আপনার যাত্রা বেছে নিন</h2><div class="s">যেকোনো একটি বেছে নিন।</div>
@@ -435,6 +436,9 @@ html{font-size:calc(16px*var(--fz,1))}body{font-size:calc(15px*var(--fz,1))}
   <div class="card"><div class="sec">নিজের আমল যোগ করুন</div>
     <div class="row" style="margin:0"><input class="inp" id="na" placeholder="যেমন: সূরা কাহফ" maxlength="40"><button class="btn" data-a="add" style="flex:none">যোগ</button></div>
     <div id="cl" style="margin-top:6px"></div></div>
+  <div class="card"><div class="sec">অ্যাকাউন্ট ও ক্লাউড সেভ</div>
+    <div class="msg" id="acct" style="margin:0 0 4px"></div><div class="msg" id="cs" style="margin:0 0 8px">সংযোগ হচ্ছে…</div>
+    <div class="row"><button class="btn o" data-a="csync">এখনই ক্লাউডে সেভ</button><button class="btn o" data-a="clogout">লগ আউট</button></div></div>
   <div class="card"><div class="sec">ব্যাকআপ</div>
     <textarea class="inp" id="bk" placeholder="ফিরিয়ে আনতে সেভ করা লেখা এখানে পেস্ট করুন" spellcheck="false"></textarea>
     <div class="row"><button class="btn o" data-a="exp">ব্যাকআপ কপি</button><button class="btn o" data-a="imp">ফিরিয়ে আনুন</button><button class="btn o" data-a="dl">ফাইল</button></div>
@@ -1122,6 +1126,71 @@ go=function(p,isBack){const t=window.__tab;window.__tab=0;
   CURP=p;_gN(p)};
 document.addEventListener("click",e=>{if(e.target.closest('[data-a="back"]')){const p=NAV.pop()||"home";go(p,true)}});
 load();applyTheme();home();heroUp();hadithDaily();applyApp();if(!S.app)openCh();else if(S.app==="train")go("home");
+</script>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {getAuth,onAuthStateChanged,signOut} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {getFirestore,doc,getDoc,setDoc} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const cfg={apiKey:"AIzaSyBIXppkMrN2I56U9luVXRvoeGKl53sUKsQ",authDomain:"tazkiyah-v01.firebaseapp.com",projectId:"tazkiyah-v01",storageBucket:"tazkiyah-v01.firebasestorage.app",messagingSenderId:"108876799499",appId:"1:108876799499:web:7b29e186158e4b1ee3b10e"};
+const fbApp=initializeApp(cfg),auth=getAuth(fbApp),db=getFirestore(fbApp),K_MAIN="amal-tracker-v1",K_TR="tazkiyah-train-v1";
+const g=k=>{try{return localStorage.getItem(k)}catch(e){return null}},s=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}},r=k=>{try{localStorage.removeItem(k)}catch(e){}};
+const $=id=>document.getElementById(id),bn=n=>Number(n).toLocaleString("bn-BD");
+const setSt=t=>{const e=$("cs");if(e)e.textContent=t};
+const toLogin=()=>location.replace("Tazkiyah_Auth.html");
+const showApp=()=>{const e=$("authgate");if(e)e.remove()};
+let ref=null,lastStr=null;
+
+/* অফলাইনে আগে লগ ইন করা থাকলে ৮ সেকেন্ড পর অ্যাপ দেখাবে */
+const fb=setTimeout(()=>{if(g("tz_uid"))showApp()},8000);
+
+function snapshot(){
+  const main=g(K_MAIN),train=g(K_TR);if(!main)return null;
+  let m=main;try{const o=JSON.parse(main);if(o.p)delete o.p.img;m=JSON.stringify(o)}catch(e){}
+  return JSON.stringify({main:m,train});
+}
+async function push(force){
+  if(!ref)throw 0;const str=snapshot();if(!str)return true;
+  if(str.length>900000){setSt("ডেটা অনেক বড়, ক্লাউডে সেভ হয়নি।");return false}
+  if(!force&&str===lastStr)return true;
+  const t=Date.now();await setDoc(ref,{backup:str,backupAt:t},{merge:true});
+  lastStr=str;s("tz_sync_ts",String(t));
+  setSt("☁ ক্লাউডে সেভ আছে · "+new Date(t).toLocaleTimeString("bn-BD",{hour:"2-digit",minute:"2-digit"}));return true;
+}
+function isEmpty(){try{const o=JSON.parse(g(K_MAIN)||"{}");return !(o.log&&Object.keys(o.log).length)&&!(o.amals||[]).some(a=>a.custom)}catch(e){return true}}
+function restore(d){
+  const o=JSON.parse(d.backup);
+  if(o.main)s(K_MAIN,o.main);if(o.train)s(K_TR,o.train);else r(K_TR);
+  s("tz_sync_ts",String(d.backupAt));location.reload();
+}
+
+onAuthStateChanged(auth,async u=>{
+  if(!u){clearTimeout(fb);r("tz_uid");return toLogin()}
+  clearTimeout(fb);
+  const old=g("tz_uid");
+  if(old&&old!==u.uid){r(K_MAIN);r(K_TR);r("tz_sync_ts");s("tz_uid",u.uid);return location.reload()}
+  s("tz_uid",u.uid);showApp();
+  const a=$("acct");if(a)a.textContent="লগ ইন: "+(u.email||u.phoneNumber||"Google অ্যাকাউন্ট");
+  try{
+    ref=doc(db,"users",u.uid);const snap=await getDoc(ref),d=snap.exists()?snap.data():{};
+    const lt=+g("tz_sync_ts")||0;
+    if(d.backup&&d.backupAt>lt){
+      if(isEmpty()||confirm("ক্লাউডে আপনার আরও নতুন ডেটা আছে।\nঠিক আছে = ক্লাউডের ডেটা বসবে\nবাতিল = এই ফোনের ডেটাই থাকবে"))return restore(d);
+    }
+    lastStr=d.backup||null;
+    try{if(d.name&&typeof S!=="undefined"&&S&&S.p&&!S.p.n){S.p.n=d.name;save();topUp()}}catch(e){}
+    await push(false);
+    setInterval(()=>push(false).catch(()=>setSt("ইন্টারনেট নেই, পরে সেভ হবে।")),20000);
+    document.addEventListener("visibilitychange",()=>{if(document.hidden)push(false).catch(()=>{})});
+  }catch(e){setSt("ক্লাউড সিঙ্ক চালু হয়নি। ইন্টারনেট ও Firestore rules দেখুন।")}
+});
+
+document.addEventListener("click",async e=>{
+  const b=e.target.closest('[data-a="csync"],[data-a="clogout"]');if(!b)return;
+  if(b.dataset.a==="csync"){setSt("সেভ হচ্ছে…");try{await push(true)}catch(_){setSt("সেভ করা যায়নি। ইন্টারনেট দেখুন।")}return}
+  if(!confirm("লগ আউট করবেন?\nডেটা ক্লাউডে সেভ থাকবে, তবে এই ফোন থেকে মুছে যাবে।"))return;
+  try{if(!await push(true))throw 0}catch(_){alert("ক্লাউডে সেভ করা যায়নি, তাই লগ আউট হয়নি। ইন্টারনেট দেখে আবার চেষ্টা করুন।");return}
+  r(K_MAIN);r(K_TR);r("tz_sync_ts");r("tz_uid");await signOut(auth);toLogin();
+});
 </script>
 <div class="ut" id="ut" role="status" aria-live="polite"></div>
 </body>
