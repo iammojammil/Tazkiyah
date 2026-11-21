@@ -370,18 +370,15 @@ html{font-size:calc(16px*var(--fz,1))}body{font-size:calc(15px*var(--fz,1))}
 /* A17 */
 .pg .rkn,.pg .rkc{max-width:100%}
 .bxl{margin-top:4px}.bxr{position:relative}.bxh{display:flex;align-items:center;gap:14px;padding:12px 10px;border-radius:16px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .25s}.bxr.op .bxh{background:color-mix(in srgb,var(--ac) 8%,transparent)}.bxr::after{content:"";position:absolute;left:10px;right:10px;bottom:0;height:1px;background:var(--line)}.bxr:last-child::after,.bxr.op::after{display:none}.bxt{flex:1;min-width:0}.bxt b{display:block;font-size:1.02rem;font-weight:500;line-height:1.45}.bxt small{color:var(--mut);font-size:.8rem}.bxc{flex:none;color:var(--mut);transition:transform .2s}.bxr.op .bxc{transform:rotate(180deg)}.bxb{display:none;margin:2px 12px 14px 56px;font-size:.92rem;line-height:1.7}.bxr.op .bxb{display:block}.bxb s{display:block;color:var(--mut);text-decoration-color:#b9503a;margin-bottom:6px}.bxb .ok{color:var(--ac);font-weight:500;margin-bottom:6px}
-.dsw{margin:14px -4px 6px}
-.dst{display:flex;gap:9px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;overscroll-behavior-x:contain;padding:22px calc(50% - 28px) 22px}
+.dsw{position:relative;margin:10px -4px 4px}
+.dst{display:flex;align-items:center;gap:5px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;overscroll-behavior-x:contain;padding:16px calc(50% - 23px) 22px}
 .dst::-webkit-scrollbar{display:none}
-.dt{flex:0 0 56px;height:74px;border-radius:18px;border:1px solid var(--cb,var(--line));background:var(--soft);color:var(--mut);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;scroll-snap-align:center;cursor:pointer;font-family:inherit;padding:0;transform:scale(var(--s,.8));opacity:var(--o,.4);will-change:transform;-webkit-tap-highlight-color:transparent}
-.dt small{font-size:.66rem;font-weight:500;line-height:1}
-.dt b{font-size:1.18rem;font-weight:700;line-height:1}
-.dt.tdy{border-color:var(--ac)}
-.dt.on{background:linear-gradient(165deg,color-mix(in srgb,var(--ac) 78%,#fff),var(--ac));color:var(--on);border-color:transparent;box-shadow:0 12px 22px -6px color-mix(in srgb,var(--ac) 55%,transparent)}
-.dt.fu:not(.on){cursor:default}.dt.fu small,.dt.fu b{opacity:.6}
-.dsl{display:flex;align-items:center;justify-content:center;gap:10px;min-height:32px}
-.dsl b{font-weight:600;font-size:.98rem}
-.dtb{border:0;background:var(--soft);color:var(--ac);font:inherit;font-size:.78rem;font-weight:600;padding:5px 12px;border-radius:999px;cursor:pointer}
+.dt{flex:0 0 46px;height:var(--h,60px);border-radius:11px;border:0;background:linear-gradient(165deg,rgba(255,255,255,calc(.16*var(--g,0))),rgba(0,0,0,calc(.10*var(--g,0)))),color-mix(in srgb,var(--ac) var(--p,8%),var(--bg));color:var(--tc,var(--ac));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;scroll-snap-align:center;cursor:pointer;font-family:inherit;padding:0;box-shadow:0 12px 20px -8px color-mix(in srgb,var(--ac) calc(var(--g,0)*60%),transparent);-webkit-tap-highlight-color:transparent}
+.dt small{font-size:.6rem;font-weight:500;line-height:1}
+.dt b{font-size:var(--f,1.05rem);font-weight:700;line-height:1}
+.dt.tdy:not(.on){box-shadow:inset 0 0 0 1.5px var(--ac)}
+.dt.fu:not(.on){cursor:default}
+.dtb{position:absolute;right:6px;top:0;z-index:2;border:0;background:var(--soft);color:var(--ac);font:inherit;font-size:.78rem;font-weight:600;padding:5px 12px;border-radius:999px;cursor:pointer}
 .dtb[hidden]{display:none}
 </style>
 <style id="rkcss"></style>
@@ -409,7 +406,7 @@ html{font-size:calc(16px*var(--fz,1))}body{font-size:calc(15px*var(--fz,1))}
   <div class="qs" id="qs"></div><div class="fri" id="fri" hidden></div><div class="sh">আজকের আমল</div>
   <div class="ph"><b id="pbm"></b><span id="pbc"></span></div>
   <div class="pbar"><i id="pbi"><b class="sc" id="pbs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M8 20h8M5 7h14"/><path d="M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/></svg></b></i><span class="pt" id="pbt"></span></div>
-  <div class="dsw"><div class="dst" id="dst"></div><div class="dsl"><b id="hd"></b><button class="dtb" data-a="dtoday" id="dtb" hidden>আজকে ফিরুন</button></div></div>
+  <div class="dsw"><button class="dtb" data-a="dtoday" id="dtb" hidden>আজকে ফিরুন</button><div class="dst" id="dst"></div></div>
   <div id="hl"></div>
 </section>
 
@@ -458,7 +455,7 @@ html{font-size:calc(16px*var(--fz,1))}body{font-size:calc(15px*var(--fz,1))}
     <div class="msg" id="bm"></div></div>
   <button class="lk" data-a="wipe">সব ডেটা মুছে নতুন করে শুরু</button>
   <button class="lk" data-a="swap">মোড বদলান (ট্রেনিং / নিয়মিত)</button>
-  <div class="ver">Tazkiyah v01 · A45</div>
+  <div class="ver">Tazkiyah v01 · A47</div>
 </section>
 
 <section class="pg" id="p-train" style="padding:0 0 100px"><div id="train-host"></div></section>
@@ -556,15 +553,16 @@ function tkCard(){
 }
 function rates(ds){const r=S.amals.map(a=>({a,n:0,d:0}));ds.forEach(x=>{if(x>today)return;const k=key(x),A=actFor(k),L=S.log[k]||[];r.forEach(q=>{if(A.includes(q.a)){q.n++;if(L.includes(q.a.id))q.d++}})});return r.filter(q=>q.n>0)}
 
-const DSTEP=65,DBACK=90,DFWD=3,DWD=["রবি","সোম","মঙ্গল","বুধ","বৃহ","শুক্র","শনি"];
+const DSTEP=51,DBACK=90,DFWD=3,DWD=["রবি","সোম","মঙ্গল","বুধ","বৃহ","শুক্র","শনি"];
 let dsBuilt="",dsT=0,dsN=-1;
 const dsDay=i=>{const d=new Date(today);d.setDate(d.getDate()+i-DBACK);return d};
 function dsBuild(){const st=$("dst");if(!st||dsBuilt===key(today))return;dsBuilt=key(today);let h="";for(let i=0;i<=DBACK+DFWD;i++){const d=dsDay(i);h+=`<button class="dt${i>DBACK?" fu":""}${i===DBACK?" tdy":""}" data-a="dpick" data-v="${i}"><small>${DWD[d.getDay()]}</small><b>${bn(d.getDate())}</b></button>`}st.innerHTML=h;st.onscroll=dsScroll;dsN=-1}
-function dsFx(){const st=$("dst");if(!st)return;const x=st.scrollLeft/DSTEP,n=Math.round(x),c=st.children,a=Math.max(0,Math.min(n,dsN<0?n:dsN)-6),b=Math.min(c.length-1,Math.max(n,dsN)+6);for(let i=a;i<=b;i++){const d=Math.abs(x-i);c[i].style.setProperty("--s",Math.max(.8,1.12-.16*d).toFixed(3));c[i].style.setProperty("--o",Math.max(.4,1-.28*d).toFixed(3));c[i].classList.toggle("on",i===n)}dsN=n}
+function tileFx(e,d,on){const P=d<=1?100-48*d:Math.max(8,52*Math.pow(.62,d-1)),H=d<=1?86-12*d:Math.max(60,74-4*(d-1)),g=Math.max(0,1-d);e.style.setProperty('--p',P.toFixed(1)+'%');e.style.setProperty('--h',H.toFixed(1)+'px');e.style.setProperty('--f',(1.05+.25*g).toFixed(3)+'rem');e.style.setProperty('--g',g.toFixed(3));e.style.setProperty('--tc',P>=40?'var(--on)':'color-mix(in srgb,var(--ac) 75%,var(--bg))');e.classList.toggle('on',on)}
+function dsFx(){const st=$("dst");if(!st)return;const x=st.scrollLeft/DSTEP,n=Math.round(x),c=st.children,a=Math.max(0,Math.min(n,dsN<0?n:dsN)-7),b=Math.min(c.length-1,Math.max(n,dsN)+7);for(let i=a;i<=b;i++)tileFx(c[i],Math.abs(x-i),i===n);dsN=n}
 function dsScroll(){dsFx();clearTimeout(dsT);dsT=setTimeout(dsSettle,120)}
 function dsGo(i,smooth){const st=$("dst");if(st)st.scrollTo({left:i*DSTEP,behavior:smooth?"smooth":"auto"})}
 function dsSettle(){const st=$("dst");if(!st||!st.offsetWidth)return;const n=Math.max(0,Math.round(st.scrollLeft/DSTEP));if(n>DBACK){dsGo(DBACK,true);return}const d=dsDay(n);if(key(d)!==key(cur)){cur=d;home()}}
-function dsSync(){dsBuild();const st=$("dst");if(!st)return;$("hd").textContent=dd(cur,{weekday:"long",day:"numeric",month:"long"});$("dtb").hidden=key(cur)===key(today);if(!st.offsetWidth)return;const i=Math.max(0,DBACK+Math.round((cur-today)/864e5));if(Math.abs(st.scrollLeft-i*DSTEP)>2)st.scrollLeft=i*DSTEP;dsFx()}
+function dsSync(){dsBuild();const st=$("dst");if(!st)return;$("dtb").hidden=key(cur)===key(today);if(!st.offsetWidth)return;const i=Math.max(0,DBACK+Math.round((cur-today)/864e5));if(Math.abs(st.scrollLeft-i*DSTEP)>2)st.scrollLeft=i*DSTEP;dsFx()}
 function home(){
   const k=key(cur),A=actFor(k),D=doneIds(k),p=pct(k);
   dsSync();
@@ -886,7 +884,17 @@ const ADAB=[['a_1','মিথ্যা থেকে বিরত থাকা','
 const ADV=['কোনো সমস্যা নেই। সৎ উত্তর দেওয়াই একটি ভালো আমল। আগামীকাল আবার নতুন করে চেষ্টা করুন, ইনশাআল্লাহ।','নিজের ভুল স্বীকার করা তাওবার প্রথম ধাপ। আল্লাহর কাছে ক্ষমা চেয়ে আগামীকাল আবার চেষ্টা করুন।'];
 
 /* ===== হিসাব ===== */
-const D=(d=T)=>S.days[d]||{};
+let SD=T,onHome=true,sT=0,sN=-1;
+const cd=()=>onHome?SD:T,wd=()=>new Date(cd()+'T12:00:00').getDay();
+const D=(d=cd())=>S.days[d]||{};
+const SDB=90,SDF=3,SSTEP=51,SWD=['রবি','সোম','মঙ্গল','বুধ','বৃহ','শুক্র','শনি'];
+const sday=i=>{const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()+i-SDB);return d};
+const stripHtml=()=>{let h='';for(let i=0;i<=SDB+SDF;i++){const d=sday(i);h+=`<button class="xt${i>SDB?' fu':''}${i===SDB?' td':''}" data-a="dpick" data-i="${i}"><small>${SWD[d.getDay()]}</small><b>${bn(d.getDate())}</b></button>`}return `<div class="xw"><button class="xb" data-a="dtoday" id="xb" hidden>আজকে ফিরুন</button><div class="xs" id="xs">${h}</div></div>`};
+function sgo(i,sm){const st=root.getElementById('xs');if(st)st.scrollTo({left:i*SSTEP,behavior:sm?'smooth':'auto'})}
+function tileFx(e,d,on){const P=d<=1?100-48*d:Math.max(8,52*Math.pow(.62,d-1)),H=d<=1?86-12*d:Math.max(60,74-4*(d-1)),g=Math.max(0,1-d);e.style.setProperty('--p',P.toFixed(1)+'%');e.style.setProperty('--h',H.toFixed(1)+'px');e.style.setProperty('--f',(1.05+.25*g).toFixed(3)+'rem');e.style.setProperty('--g',g.toFixed(3));e.style.setProperty('--tc',P>=40?'var(--on)':'color-mix(in srgb,var(--ac) 75%,var(--bg))');e.classList.toggle('on',on)}
+function sfx(st){const x=st.scrollLeft/SSTEP,n=Math.round(x),c=st.children,a=Math.max(0,Math.min(n,sN<0?n:sN)-7),b=Math.min(c.length-1,Math.max(n,sN)+7);for(let i=a;i<=b;i++)tileFx(c[i],Math.abs(x-i),i===n);sN=n}
+function sSettle(st){if(!st.isConnected||!st.offsetWidth)return;const n=Math.max(0,Math.round(st.scrollLeft/SSTEP));if(n>SDB){sgo(SDB,true);return}const k=dk(sday(n));if(k!==SD){SD=k;const y=window.scrollY;render();window.scrollTo(0,y)}}
+function tzStrip(){const st=root.getElementById('xs');sN=-1;if(!st)return;const b=root.getElementById('xb');if(b)b.hidden=SD===T;if(st.offsetWidth){const i=Math.max(0,SDB+Math.round((new Date(SD+'T12:00:00')-sday(SDB))/864e5));st.scrollLeft=i*SSTEP;sfx(st)}st.addEventListener('scroll',()=>{sfx(st);clearTimeout(sT);sT=setTimeout(()=>sSettle(st),120)})}
 const cnt=(d=T)=>ALL.filter(k=>D(d)[k]).length;
 const active=d=>cnt(d)>0;
 const total=()=>Object.keys(S.days).filter(active).length;
@@ -904,7 +912,7 @@ const hist=(fn)=>[1,2,3,4,5,6,7].map(i=>`<div class="row"><span>${ago(i)}</span>
 /* ===== আজকের সিরিয়াল (সময়ক্রম) ===== */
 const INF=id=>[...DHIKR,...DUA].find(x=>x.id===id)||{};
 const isDone=it=>it.t==='adab'?ADAB.every(a=>D()[a[0]]):!!D()[it.id];
-let OPEN={};const fz=()=>new Date().getDay()===5;
+let OPEN={};const fz=()=>wd()===5;
 const PLAN=()=>{const sn=id=>SUN.find(x=>x[0]===id)[1];const u=l1();
  const G=[
  {ic:'wake',t:'ঘুম থেকে জাগা',w:'ফজরের আগে',items:[
@@ -949,8 +957,8 @@ home(){const P=PLAN(),items=P.flatMap(g=>g.items).filter(x=>x.id||x.t==='adab'),
  const body=P.map(g=>{const its=g.items.filter(x=>x.id||x.t==='adab'),d=its.filter(isDone).length;
   return `<div class="gs" data-g="${g.ic}"><div class="gh"><span>${g.t}</span><small>${d===its.length?'✓ সব সম্পন্ন':bn(d)+'/'+bn(its.length)}</small></div>${g.note?`<div class="note">${g.note}</div>`:''}${g.items.map(it=>{n++;return stepHtml(it,n)}).join('')}</div>`}).join('');
  return `<div class="top"><div><h1>Tazkiyah · ট্রেনিং</h1><div class="mu">প্রতিদিন একটু একটু করে আল্লাহর পথে।</div></div><span><button class="ib ic1" data-a="tth" aria-label="থিম">${THI}</button> <button class="ib" data-a="swap">মোড</button></span></div>
- <div class="hero"><div class="hh" style="justify-content:center;line-height:1.3"><b>${LV[lvIdx()].n}</b></div><div class="hf" style="margin-top:2px;align-items:baseline"><span style="font-size:14px;opacity:.92">৪০ দিনের স্ট্রিক</span><span><b style="font-size:18px">${bn(Math.min(streak(),40))}</b> <span style="font-size:14px;opacity:.9">/ ৪০ দিন</span></span></div>${bar(pct(Math.min(streak(),40),40))}<div class="hf" style="margin-top:10px;align-items:baseline"><span style="font-size:14px;opacity:.92">আজ ${bn(dn)}/${bn(tot)} সম্পন্ন</span><b style="font-size:15px">${bn(pct(dn,tot))}%</b></div>${bar(pct(dn,tot))}</div>
- <p class="mu hnt">সারিতে চাপ দিলে সম্পন্ন হবে।</p>
+ <div class="hero"><div class="hh" style="justify-content:center;line-height:1.3"><b>${LV[lvIdx()].n}</b></div><div class="hf" style="margin-top:2px;align-items:baseline"><span style="font-size:14px;opacity:.92">৪০ দিনের স্ট্রিক</span><span><b style="font-size:18px">${bn(Math.min(streak(),40))}</b> <span style="font-size:14px;opacity:.9">/ ৪০ দিন</span></span></div>${bar(pct(Math.min(streak(),40),40))}<div class="hf" style="margin-top:10px;align-items:baseline"><span style="font-size:14px;opacity:.92">${SD===T?'আজ':'এই দিনে'} ${bn(dn)}/${bn(tot)} সম্পন্ন</span><b style="font-size:15px">${bn(pct(dn,tot))}%</b></div>${bar(pct(dn,tot))}</div>
+ ${stripHtml()}<p class="mu hnt">সারিতে চাপ দিলে সম্পন্ন হবে।</p>
  ${body}
  <div class="card lkc">${[['topics','pray','বিষয়ভিত্তিক আমল','নামাজ, যিকির, কুরআন, আদব, দোয়া'],['progress','progress','আমার অগ্রগতি','স্ট্রিক ও আমলের ইতিহাস'],['roadmap','road','আমার Roadmap','পরবর্তী ধাপ ও নতুন আমল']].map(x=>`<button class="lk3" data-a="go" data-k="${x[0]}"><span class="gi2">${IC[x[1]]}</span><div class="gtt"><b>${x[2]}</b><small>${x[3]}</small></div><span class="chv">${IC.go}</span></button>`).join('')}</div>`},
 topics(){const sc=[['pray','নামাজ','পাঁচ ওয়াক্ত সালাত।'],['dhikr','সকাল-সন্ধ্যার যিকির','নির্বাচিত মাসনূন যিকির।'],['quran','কুরআন তিলাওয়াত','প্রতিদিন অল্প তিলাওয়াত।'],['adab','ইসলামী আদব','আচরণ ও আত্মমূল্যায়ন।'],['dua','দৈনন্দিন দোয়া','সকাল ও রাতের দোয়া।'],['progress','আমার অগ্রগতি','স্ট্রিক ও আমলের ইতিহাস।']];
@@ -988,11 +996,11 @@ let lpT=0,lpX=0,lpY=0,lpF=false,UN=null,tT=0;
 const toastEl=root.getElementById('ut');
 function hideT(){toastEl.classList.remove('on');clearTimeout(tT)}
 function toast(m,undo){toastEl.innerHTML='<span>'+m+'</span>'+(undo?'<button type="button">↩ ফিরিয়ে নিন</button>':'');toastEl.classList.add('on');clearTimeout(tT);tT=setTimeout(hideT,2800)}
-toastEl.addEventListener('click',e=>{if(e.target.tagName==='BUTTON'&&UN){const y=window.scrollY;S.days[T]=S.days[T]||{};S.days[T][UN]=1;UN=null;save();hideT();render();window.scrollTo(0,y)}});
+toastEl.addEventListener('click',e=>{if(e.target.tagName==='BUTTON'&&UN){const y=window.scrollY;const c=cd();S.days[c]=S.days[c]||{};S.days[c][UN]=1;UN=null;save();hideT();render();window.scrollTo(0,y)}});
 const LPSEL='.rw.on[data-a="tg"],.chk.on[data-a="tg"]';
 app.addEventListener('pointerdown',e=>{const r=e.target.closest(LPSEL);if(!r)return;lpX=e.clientX;lpY=e.clientY;clearTimeout(lpT);
  lpT=setTimeout(()=>{lpF=true;setTimeout(()=>{lpF=false},600);try{navigator.vibrate&&navigator.vibrate(30)}catch(_){}
-  const k=r.dataset.k;if(S.days[T]&&S.days[T][k]){const y=window.scrollY;delete S.days[T][k];UN=k;save();render();window.scrollTo(0,y);toast('আনটিক হয়েছে',1)}},600)});
+  const k=r.dataset.k;if(S.days[cd()]&&S.days[cd()][k]){const y=window.scrollY;delete S.days[cd()][k];UN=k;save();render();window.scrollTo(0,y);toast('আনটিক হয়েছে',1)}},600)});
 app.addEventListener('pointermove',e=>{if(Math.abs(e.clientX-lpX)>10||Math.abs(e.clientY-lpY)>10)clearTimeout(lpT)});
 ['pointerup','pointercancel','pointerleave'].forEach(n=>app.addEventListener(n,()=>clearTimeout(lpT)));
 app.addEventListener('contextmenu',e=>{if(e.target.closest(LPSEL))e.preventDefault()});
@@ -1000,26 +1008,27 @@ app.addEventListener('contextmenu',e=>{if(e.target.closest(LPSEL))e.preventDefau
 
 /* A10 Friday (train) */
 {const st=document.createElement('style');st.textContent='.card.fr{border-color:rgba(201,162,74,.55);background:linear-gradient(135deg,var(--card),color-mix(in srgb,#c9a24a 12%,var(--card)))}.frh{display:flex;align-items:center;gap:10px;margin-bottom:4px}.frh b{font-size:18px}.frh .tag{margin-left:auto}.frb{display:flex;align-items:center;gap:10px;width:100%;margin:14px 0 0;padding:12px 16px;border-radius:16px;border:1px solid rgba(201,162,74,.6);background:linear-gradient(135deg,var(--card),color-mix(in srgb,#c9a24a 18%,var(--card)));color:var(--ink);font:inherit;text-align:left;cursor:pointer}.frb span{flex:1;min-width:0}.frb b{display:block;font-size:17px}.frb small{color:var(--mut);font-size:12.5px}.frb i{font-style:normal;font-size:13px;color:#a8801f;font-weight:600;white-space:nowrap}#frcard{scroll-margin-top:12px}.card.pl{animation:pl 1.6s ease}@keyframes pl{0%,60%{box-shadow:0 0 0 4px rgba(201,162,74,.55)}100%{box-shadow:0 0 0 0 rgba(201,162,74,0)}}.frp{display:flex;justify-content:space-between;gap:8px;align-items:baseline;margin:14px 0 2px;padding:7px 10px;border-radius:10px;background:color-mix(in srgb,#c9a24a 14%,transparent);font-size:14px}.frp span{color:var(--mut);font-size:12.5px}';root.appendChild(st)}
-const _vh=V.home;V.home=function(){let h=_vh();if(new Date().getDay()!==5)return h;const no=false,P=(window.FRP||[]).map((x,i)=>({...x,i})).filter(x=>!(no&&x.i===1)),L=(window.FRI||[]).filter(x=>!(no&&x.p===1)),n=L.filter(x=>D()[x.id]).length;let c=0,q=0;
+const _vh=V.home;V.home=function(){let h=_vh();if(wd()!==5)return h;const no=false,P=(window.FRP||[]).map((x,i)=>({...x,i})).filter(x=>!(no&&x.i===1)),L=(window.FRI||[]).filter(x=>!(no&&x.p===1)),n=L.filter(x=>D()[x.id]).length;let c=0,q=0;
  const rows=P.map(ph=>{const its=L.filter(x=>x.p===ph.i),dn=its.filter(x=>D()[x.id]).length;return `<div class="frp"><b>${bn(++q)}. ${ph.t}</b><span>${ph.w} · ${bn(dn)}/${bn(its.length)}</span></div>`+its.map(x=>stepHtml(x,++c)).join('')}).join('');
  const card=`<div class="card fr gp" id="frcard"><div class="frh"><b>জুমা মুবারাক</b><span class="tag">${bn(n)}/${bn(L.length)}</span></div><p class="mu" style="margin:0 0 6px">${no?'আজ যোহরের নামাজ আপনার তালিকায় আছে। জুমার বাকি আমলগুলো যেটুকু পারেন, করুন।':'যোহরের বদলে জুমা। যেটুকু পারেন, করুন।'}</p>${bar(pct(n,L.length))}${rows}<div class="note"><b>এড়িয়ে চলুন:</b> ${window.FRN.avoid}</div><div class="note">${window.FRN.kahf}</div><p class="mu" style="margin:8px 0 0">${window.FRN.soft}</p></div>`;
  const m='<div class="gs" data-g="asr">',k=h.indexOf(m);h=k<0?h.replace('<div class="gs">',card+'<div class="gs">'):h.slice(0,k)+card+h.slice(k);const ban=`<button class="frb" data-a="frgo"><span><b>জুমা মুবারাক</b><small>জুমার ${bn(L.length)}টি আমল · ${bn(n)}/${bn(L.length)}</small></span><i>দেখুন ↓</i></button>`;return h.replace('<p class="mu hnt">',ban+'<p class="mu hnt">')};
+{const st=document.createElement('style');st.textContent='.xw{position:relative;margin:6px -4px 2px}\n.xs{display:flex;align-items:center;gap:5px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;overscroll-behavior-x:contain;padding:16px calc(50% - 23px) 22px}\n.xs::-webkit-scrollbar{display:none}\n.xt{flex:0 0 46px;height:var(--h,60px);border-radius:11px;border:0;background:linear-gradient(165deg,rgba(255,255,255,calc(.16*var(--g,0))),rgba(0,0,0,calc(.10*var(--g,0)))),color-mix(in srgb,var(--ac) var(--p,8%),var(--bg));color:var(--tc,var(--ac));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;scroll-snap-align:center;cursor:pointer;font-family:inherit;padding:0;box-shadow:0 12px 20px -8px color-mix(in srgb,var(--ac) calc(var(--g,0)*60%),transparent);-webkit-tap-highlight-color:transparent}\n.xt small{font-size:.6rem;font-weight:500;line-height:1}\n.xt b{font-size:var(--f,1.05rem);font-weight:700;line-height:1}\n.xt.td:not(.on){box-shadow:inset 0 0 0 1.5px var(--ac)}\n.xt.fu:not(.on){cursor:default}\n.xb{position:absolute;right:6px;top:0;z-index:2;border:0;background:var(--soft);color:var(--ac);font:inherit;font-size:.78rem;font-weight:600;padding:5px 12px;border-radius:999px;cursor:pointer}\n.xb[hidden]{display:none}';root.appendChild(st)}
 {const st=document.createElement('style');st.textContent=window.RKCSS;root.appendChild(st)}
 const _vp=V.pray;V.pray=function(){const h=_vp(),m='<div class="note">হানাফি মাজহাব: বিতর';const k=h.indexOf(m);const g='<h2>প্রতি ওয়াক্তের রাকাত</h2>'+window.rakHtml();return k<0?h+g:h.slice(0,k)+g+h.slice(k)};
 {const st=document.createElement('style');st.textContent='.rw{padding:9px 0;gap:11px}.rw .dm{margin-top:0}.rw .ck{margin-top:1px}.rn{font-size:15px;line-height:1.35}.rn .tag{margin-left:6px;padding:0 8px;font-size:11.5px}.rm{margin-top:2px;font-size:12px;line-height:1.45}.rh{margin-top:2px;font-size:12.5px;line-height:1.5;opacity:.78}.rt>.mr{display:inline-block;margin:0 0 -6px;padding:6px 0;font-size:13px}.rw.on .rh{opacity:.6}.gx{padding:8px 0 6px}.gp{padding:2px 16px 4px;margin-top:10px}.dt{margin-top:8px;padding:4px 12px 8px}.mr.ab{margin-top:8px;padding:7px 14px}';root.appendChild(st)}
 {const st=document.createElement('style');st.textContent='.gs{margin-top:16px}.gs .gx{border-bottom:1px solid var(--line);padding:6px 2px 8px}.gs .gi2{width:34px;height:34px;border-radius:11px}.gs .gi2 svg{width:19px;height:19px}.gs .gtt b{font-size:15px}.gs .note{margin:8px 0 0}.ri{border-bottom:1px solid var(--line)}.ri:last-child{border-bottom:0}.ri>.rw{align-items:center;padding:10px 2px;border-bottom:0;gap:12px}.ri>.rw .dm,.ri>.rw .ck{margin-top:0}.ex{flex:none;width:30px;height:30px;border-radius:50%;border:0;background:var(--soft);color:var(--ac);display:grid;place-items:center;padding:0;cursor:pointer}.ex svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}.ex.o svg{transform:rotate(180deg)}.ri>.rw>.chv{flex:none;width:30px;display:grid;place-items:center}.dt2{margin:0 0 10px 44px;background:var(--soft);border-radius:14px;padding:10px 14px 12px}.dt2 .hw{margin:0 0 4px;font-size:13px;line-height:1.6}.dt2 .ar{font-size:23px;line-height:2.1;margin:2px 0}.dt2 p{margin:5px 0;font-size:13.5px;line-height:1.65}.dt2 .mr{margin-top:6px}.hnt{margin:12px 2px 0;font-size:12.5px}';root.appendChild(st)}
 {const st=document.createElement('style');st.textContent='.rn .cn{font-size:12.5px;font-weight:600;color:var(--ac);white-space:nowrap}.rh{margin-top:2px;opacity:.85}.gs .gx{border-bottom:0;padding-bottom:2px}.rn{font-size:1.02rem}.rn .cn{font-size:.85rem}.rh{font-size:.82rem}.gh{display:flex;justify-content:space-between;align-items:baseline;margin:16px 2px 0;font-size:.82rem;color:var(--mut);font-weight:500}.gs{margin-top:0;padding:0 4px}.ri{border-bottom:0;position:relative}.ri::after{content:"";position:absolute;left:10px;right:10px;bottom:0;border-bottom:1px solid var(--line)}.ri:last-child::after{display:none}.ri>.rw{padding:12px 10px}.dt2{margin:0 10px 10px 54px}.rn{font-weight:500;line-height:1.45}.rw.on .rn{opacity:.8}';root.appendChild(st)}
 /* ===== রেন্ডার ও ইভেন্ট ===== */
-let R='home',RH=[];function render(){app.innerHTML=(V[R]||V.home)();}
-app.addEventListener('click',e=>{if(e.target.closest('[data-a="swap"]')){window.tzSwap();return}if(e.target.closest('[data-a="tth"]')){document.querySelector('#thm .tg').click();return}const t=e.target.closest('[data-a]');if(!t)return;const a=t.dataset.a,k=t.dataset.k,y=window.scrollY;
+let R='home',RH=[];function render(){onHome=(R==='home');app.innerHTML=(V[R]||V.home)();tzStrip();}
+app.addEventListener('click',e=>{if(e.target.closest('[data-a="swap"]')){window.tzSwap();return}if(e.target.closest('[data-a="tth"]')){document.querySelector('#thm .tg').click();return}const t=e.target.closest('[data-a]');if(!t)return;const a=t.dataset.a,k=t.dataset.k,y=window.scrollY;if(a==='dpick'){const i=+t.dataset.i;if(i<=SDB)sgo(i,true);return}if(a==='dtoday'){sgo(SDB,true);return}
  if(a==='go'){if(k==='home')RH=[];else if(k!==R)RH.push(R);R=k;render();window.scrollTo(0,0);return}
  if(a==='rback'){R=RH.pop()||'home';render();window.scrollTo(0,0);return}
  if(a==='frgo'){const e=app.querySelector('#frcard');if(e){e.scrollIntoView({behavior:'smooth',block:'start'});e.classList.add('pl');setTimeout(()=>e.classList.remove('pl'),1700)}return}
  if(a==='fz'){S.fz=S.fz||{};S.fz[T]=!S.fz[T]}
  if(a==='ex'){OPEN[k]=!OPEN[k]}
  if(a==='th'){S.theme=S.theme==='light'?'dark':'light'}
- if(a==='tg'){if(lpF)return;S.days[T]=S.days[T]||{};if(S.days[T][k]){toast('আনটিক করতে চেপে ধরে রাখুন');return}S.days[T][k]=1;UN=null}
- if(a==='ad'){S.days[T]=S.days[T]||{};S.days[T][k]=t.dataset.v}
+ if(a==='tg'){if(lpF)return;const c=cd();S.days[c]=S.days[c]||{};if(S.days[c][k]){toast('আনটিক করতে চেপে ধরে রাখুন');return}S.days[c][k]=1;UN=null}
+ if(a==='ad'){const c=cd();S.days[c]=S.days[c]||{};S.days[c][k]=t.dataset.v}
  save();render();window.scrollTo(0,y)});
 render();
 
