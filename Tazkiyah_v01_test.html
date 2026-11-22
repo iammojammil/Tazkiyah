@@ -449,6 +449,36 @@ html{font-size:calc(16px*var(--fz,1))}body{font-size:calc(15px*var(--fz,1))}
 .h8rd.done{background:#fff;border-color:transparent;color:#155a49;box-shadow:0 5px 10px -5px rgba(5,40,30,.5)}
 .h8rd.done svg{display:block}.h8rd.done svg path{stroke:#155a49}
 </style>
+<style id="hdcss">
+/* A57: আজকের আমল পেজের "আজ" বাটন (হোমের মতোই) */
+#p-amal .h8mrow{margin:6px 0 0}
+#p-amal .h8mlab{padding:0 2px}
+#p-amal .h8tb{right:2px;border:0;font-family:inherit;cursor:pointer}
+/* A57: হাদিস পড়ি */
+.hnr{padding:8px 0;border-top:1px solid var(--line)}.hnr:first-of-type{border-top:0}
+.hnr b{display:block;font-weight:600}.hnr>span{display:block;font-size:.86rem;color:var(--mut);line-height:1.6;margin-bottom:2px}
+.hgr{display:grid;grid-template-columns:1fr 1fr;gap:18px 14px;margin:14px 2px 8px}
+.hbk{position:relative;display:block;width:100%;aspect-ratio:3/4.15;padding:0;border:0;margin:0;text-align:center;font:inherit;color:#fff;cursor:pointer;overflow:hidden;border-radius:6px 18px 18px 6px;background:linear-gradient(135deg,var(--hero1),var(--hero2));box-shadow:0 16px 26px -12px rgba(27,106,87,.6),inset 0 1px 0 rgba(255,255,255,.28);transition:transform .15s}
+.hbk:active{transform:scale(.97)}
+.hbk::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 90% 105%,rgba(200,235,218,.45),transparent 55%)}
+.hsp{position:absolute;left:0;top:0;bottom:0;width:14px;background:linear-gradient(90deg,rgba(0,0,0,.32),rgba(0,0,0,.08) 65%,rgba(255,255,255,.14));border-right:1px solid rgba(255,255,255,.2)}
+.hsp::after{content:"";position:absolute;left:5px;top:14%;bottom:14%;width:1.5px;border-radius:2px;background:rgba(243,227,179,.75)}
+.hcv{position:absolute;z-index:1;inset:10px 10px 10px 24px;border:1px solid rgba(243,227,179,.7);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:8px 6px}
+.har{font-family:Amiri,"Noto Naskh Arabic",serif;direction:rtl;font-size:1.28rem;line-height:1.5;color:#f3e3b3}
+.hnm{display:block;background:#fff;color:#14452f;border-radius:8px;padding:6px 8px;font-weight:600;font-size:.92rem;line-height:1.35;max-width:100%}
+.hdv{width:34px;height:1.5px;border-radius:2px;background:rgba(243,227,179,.75)}
+.hct{font-size:.72rem;line-height:1.5;color:rgba(255,255,255,.92)}
+.hpr{font-size:.7rem;font-weight:600;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.5);border-radius:99px;padding:1px 10px}
+.hbk.soon{filter:saturate(.75)}
+.hbh{text-align:center}.hbh .har2{font-family:Amiri,"Noto Naskh Arabic",serif;direction:rtl;font-size:1.5rem;color:var(--gold);line-height:1.6}.hbh b{display:block;font-size:1.05rem}.hbh small{display:block;color:var(--mut);font-size:.8rem;line-height:1.6;margin-top:4px}.hbh .hrp{margin-top:8px;font-size:.86rem;color:var(--ac);font-weight:600}
+.hrc{background:var(--card);border:1px solid var(--cb);border-radius:20px;padding:14px 16px;margin:0 0 12px;box-shadow:var(--sh)}
+.hrh{display:flex;align-items:center;gap:12px}.hrt{flex:1;min-width:0}.hrn{font-weight:600;font-size:1rem}.hrs{font-size:.8rem;color:var(--mut);line-height:1.5}
+.hrx{margin-top:10px;font-size:.95rem;line-height:1.85}.hrx.hph{font-size:.82rem;color:var(--mut)}
+.hrb{margin-top:10px;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--ac);color:var(--ac);background:transparent;border-radius:999px;padding:8px 16px;min-height:40px;font:inherit;font-size:.85rem;font-weight:500;cursor:pointer;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:manipulation}
+.hrb svg{display:none}.hrb.on{background:var(--ng);border-color:transparent;color:#fff}.hrb.on svg{display:block}
+.hrc.on .dm{color:#fff}.hrc.on .dm::before{background:var(--ng);border-color:transparent}
+.hnd{padding:10px 0;border-top:1px solid var(--line)}.hnd:first-of-type{border-top:0}.hdt{font-weight:600;font-size:.92rem;margin-bottom:4px}.hnl{display:flex;justify-content:space-between;gap:10px;font-size:.86rem;line-height:1.6}.hnl span{color:var(--mut)}.hnl b{font-weight:500;text-align:right}
+</style>
 <style id="authgate">body{visibility:hidden}</style>
 </head>
 <body>
@@ -460,7 +490,7 @@ html{font-size:calc(16px*var(--fz,1))}body{font-size:calc(15px*var(--fz,1))}
 <section class="pg on" id="p-home">
   <div class="h8hd h8pad">
     <div class="h8av" id="hav"></div>
-    <div class="h8nm"><div class="nmq" id="hnm"></div><small>এক্সপার্ট মোড</small></div>
+    <div class="h8nm"><div class="nmq" id="hnm"></div><small id="hmode">এক্সপার্ট মোড</small></div>
     <div class="mnw"><button class="h8ib" data-a="menu" aria-label="মেনু"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       <div class="mnu" id="mnu"><div class="mi" data-a="mode">থিম বদলান</div><div class="mi" data-a="go" data-v="me">প্রোফাইল ও ব্যাকআপ</div><div class="mi" data-a="go" data-v="review">রিভিউ</div><div class="mi" data-a="swap">মোড বদলান</div></div></div>
     <div class="thm" id="thm"></div>
@@ -533,10 +563,10 @@ html{font-size:calc(16px*var(--fz,1))}body{font-size:calc(15px*var(--fz,1))}
 
 <section class="pg" id="p-amal">
   <h2>আজকের আমল</h2>
-  <div class="qs" id="qs"></div><div class="sh" id="shm"></div>
+  <div class="qs" id="qs"></div><div class="h8mrow"><div class="h8mlab" id="shm"></div><button class="h8tb" id="dtb" type="button" data-a="dtoday" aria-label="আজকের দিনে ফিরুন">আজ</button></div>
   <div class="ph"><b id="pbm"></b><span id="pbc"></span></div>
   <div class="pbar"><i id="pbi"><b class="sc" id="pbs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M8 20h8M5 7h14"/><path d="M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/></svg></b></i><span class="pt" id="pbt"></span></div>
-  <div class="dsw"><button class="dtb" data-a="dtoday" id="dtb" hidden>আজকে ফিরুন</button><div class="dst" id="dst"></div></div>
+  <div class="dsw"><div class="dst" id="dst"></div></div>
   <div class="fri" id="fri" hidden></div><div class="sh2"><span id="sh2t">আজকের আমল</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div><div id="hl"></div>
 </section>
 
@@ -566,7 +596,7 @@ html{font-size:calc(16px*var(--fz,1))}body{font-size:calc(15px*var(--fz,1))}
 </section>
 
 <section class="pg" id="p-menu"></section>
-<section class="pg" id="p-know"></section><section class="pg" id="p-rakat"></section><section class="pg" id="p-bhul"></section><section class="pg" id="p-bid"></section>
+<section class="pg" id="p-know"></section><section class="pg" id="p-rakat"></section><section class="pg" id="p-bhul"></section><section class="pg" id="p-bid"></section><section class="pg" id="p-hadith"></section><section class="pg" id="p-hbook"></section>
 <section class="pg" id="p-me">
   <button class="bk" data-a="back" aria-label="পেছনে যান"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>পেছনে</button><h2>প্রোফাইল</h2>
   <div class="av" id="av" data-a="pic" style="cursor:pointer"></div><input type="file" id="pic" accept="image/*" hidden><div class="msg" style="margin:-4px 0 12px">ছবি বদলাতে ট্যাপ করুন</div>
@@ -585,7 +615,7 @@ html{font-size:calc(16px*var(--fz,1))}body{font-size:calc(15px*var(--fz,1))}
     <div class="msg" id="bm"></div></div>
   <button class="lk" data-a="wipe">সব ডেটা মুছে নতুন করে শুরু</button>
   <button class="lk" data-a="swap">মোড বদলান (ট্রেনিং / এক্সপার্ট)</button>
-  <div class="ver">v01_A56</div>
+  <div class="ver">v01_A57</div>
 </section>
 
 <section class="pg" id="p-train" style="padding:0 0 100px"><div id="train-host"></div></section>
@@ -695,7 +725,7 @@ function dsSlow(st,to){cancelAnimationFrame(dsA);const f=st.scrollLeft,dist=to-f
 function dsMeasure(){const st=$("dst");if(!st||!st.clientWidth)return;{const W=st.clientWidth,w=.112*W;DSTEP=(W/2+.2*w)/4;st.style.setProperty('--st',DSTEP.toFixed(2)+'px');st.style.setProperty('--w',w.toFixed(2)+'px');st.style.setProperty('--W',W+'px')}}
 function dsGo(i,smooth){const st=$("dst");if(!st)return;if(smooth)dsSlow(st,i*DSTEP);else st.scrollLeft=i*DSTEP}
 function dsSettle(){const st=$("dst");if(!st||!st.offsetWidth)return;const n=Math.max(0,Math.round(st.scrollLeft/DSTEP));if(n>DBACK){dsGo(DBACK,true);return}const d=dsDay(n);if(key(d)!==key(cur)){cur=d;home()}}
-function dsSync(){dsBuild();const st=$("dst");if(!st)return;if(!window.__dsr){window.__dsr=1;addEventListener("resize",()=>{dsSync()})}dsMeasure();$("dtb").hidden=key(cur)===key(today);if(!st.offsetWidth)return;const i=Math.max(0,DBACK+Math.round((cur-today)/864e5));if(Math.abs(st.scrollLeft-i*DSTEP)>2){if(window.__dsAnim)dsSlow(st,i*DSTEP);else st.scrollLeft=i*DSTEP}dsFx()}
+function dsSync(){dsBuild();const st=$("dst");if(!st)return;if(!window.__dsr){window.__dsr=1;addEventListener("resize",()=>{dsSync()})}dsMeasure();$("dtb").classList.toggle("show",key(cur)!==key(today));if(!st.offsetWidth)return;const i=Math.max(0,DBACK+Math.round((cur-today)/864e5));if(Math.abs(st.scrollLeft-i*DSTEP)>2){if(window.__dsAnim)dsSlow(st,i*DSTEP);else st.scrollLeft=i*DSTEP}dsFx()}
 function home(){
   const k=key(cur),A=actFor(k),D=doneIds(k),p=pct(k);
   dsSync();
@@ -784,7 +814,7 @@ function me(){
   $("cl").innerHTML=S.amals.filter(a=>a.custom).map(a=>`<div class="it" style="cursor:default"><span>${esc(a.name)}</span><span style="flex:none"></span><button class="x" data-a="del" data-v="${esc(a.id)}" aria-label="মুছুন">✕</button></div>`).join("");
 }
 function render(){({home:homeNew,amal:home,tasbih,review,me})[pg]();if(pg==="home")topUp();if(pg==="review")hnote()}
-const NAVI={home:0,amal:1,tasbih:2,me:3,menu:3,know:3,rakat:3,bhul:3,bid:3,train:0};
+const NAVI={home:0,amal:1,tasbih:2,me:3,menu:3,know:3,rakat:3,bhul:3,bid:3,train:1};
 function setNav(p){const i=NAVI[p];document.querySelectorAll(".nav button").forEach((b,j)=>b.classList.toggle("on",j===i))}
 function go(p){
   pg=p;
@@ -1172,13 +1202,13 @@ app.addEventListener('click',e=>{if(e.target.closest('[data-a="swap"]')){window.
  save();render();window.scrollTo(0,y)});
 render();
 
-window.tzRender=render;})();
+window.tzRender=render;window.tzLv=()=>lvIdx();window.tzToday=()=>{const o=onHome;onHome=false;try{const it=PLAN().flatMap(g=>g.items).filter(x=>x.id||x.t==='adab');return[it.filter(isDone).length,it.length]}finally{onHome=o}};})();
 
 const _go=go;
-go=function(p){const tr=S.app==="train";if(tr&&p==="home")p="train";
-  if(p==="train"){document.querySelectorAll(".pg").forEach(e=>e.classList.toggle("on",e.id==="p-train"));document.querySelectorAll(".nav button").forEach((b,i)=>b.classList.toggle("on",i===0));window.tzRender();window.scrollTo(0,0)}
+go=function(p){const tr=S.app==="train";if(tr&&p==="amal")p="train";
+  if(p==="train"){document.querySelectorAll(".pg").forEach(e=>e.classList.toggle("on",e.id==="p-train"));document.querySelectorAll(".nav button").forEach((b,i)=>b.classList.toggle("on",i===1));window.tzRender();window.scrollTo(0,0)}
   else{$("p-train").classList.remove("on");_go(p)}};
-function applyApp(){const tr=S.app==="train",nb=document.querySelectorAll(".nav button");nb[0].lastChild.textContent=tr?"ট্রেনিং":"হোম";nb[1].style.display=tr?"none":""}
+function applyApp(){const tr=S.app==="train",nb=document.querySelectorAll(".nav button");nb[0].lastChild.textContent="হোম";nb[1].lastChild.textContent=tr?"ট্রেনিং":"আমল";nb[1].style.display="";const hm=$("hmode");if(hm)hm.textContent=tr?"ট্রেনিং মোড":"এক্সপার্ট মোড"}
 function openCh(){$("ch-t").classList.toggle("cur",S.app==="train");$("ch-p").classList.toggle("cur",S.app==="pro");$("ch").classList.add("on")}
 window.tzSwap=openCh;
 document.addEventListener("click",e=>{const t=e.target.closest("[data-a=swap],[data-a=pick]");if(!t)return;
@@ -1188,7 +1218,7 @@ document.addEventListener("click",e=>{const t=e.target.closest("[data-a=swap],[d
 /* ===== A7 additions ===== */
 const TRK="tazkiyah-train-v1";
 const bkStr=()=>{S.bk=S.bk||Date.now();return JSON.stringify(Object.assign({},S,{_tr:localStorage.getItem(TRK)}))};
-function qsUp(){$("shm").textContent=dd(cur,{month:"long",year:"numeric"});$("sh2t").textContent=key(cur)===key(today)?"আজকের আমল":"এই দিনের আমল";const e=$("qs");if(!e)return;const t=tkInfo(),p=Math.round(pct(key(today))*100);
+function qsUp(){$("shm").innerHTML=window.h8fmtM?h8fmtM(cur):dd(cur,{month:"long"});$("sh2t").textContent=key(cur)===key(today)?"আজকের আমল":"এই দিনের আমল";const e=$("qs");if(!e)return;const t=tkInfo(),p=Math.round(pct(key(today))*100);
   e.innerHTML=`<button data-a="rvm"><b>${bn(streak())}</b><small>দিনের স্ট্রিক</small></button><button data-a="rvw"><b>${bn(p)}%</b><small>আজকের আমল</small></button><button data-a="rvm"><b>${bn(t.c)}/${bn(TKN)}</b><small>তাকবীরে উলা</small></button>`}
 const _home=home;home=function(){_home();qsUp()};
 const _hl=homeList;homeList=function(A,D){_hl(A,D);document.querySelectorAll("#hl .am").forEach(e=>{e.tabIndex=0;e.setAttribute("role","checkbox");e.setAttribute("aria-checked",e.classList.contains("on"))})};
@@ -1215,7 +1245,7 @@ $("fri").addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.tar
 document.addEventListener("visibilitychange",()=>{if(!document.hidden&&key(new Date())!==key(today))location.reload()});
 
 /* ===== A16: Menu + Knowledge ===== */
-window.TOPICS=[{id:"life",t:"প্রয়োজনীয় জ্ঞান",s:"জীবনের সফর: জন্ম থেকে মৃত্যু",pg:"know"},{id:"rakat",t:"নামাজের রাকাত",s:"ফজর থেকে এশা, বিতর ও জুমা",pg:"rakat"},{id:"bhul",t:"প্রচলিত ভুল (কুসংস্কার)",s:"সব তালিকা ও বিষয় অনুযায়ী, সোর্সসহ",pg:"bhul"},{id:"bid",t:"প্রচলিত বিদ‘আত",s:"সব তালিকা ও বিষয় অনুযায়ী, রেফারেন্সসহ",pg:"bid"}];
+window.TOPICS=[{id:"life",t:"প্রয়োজনীয় জ্ঞান",s:"জীবনের সফর: জন্ম থেকে মৃত্যু",pg:"know"},{id:"rakat",t:"নামাজের রাকাত",s:"ফজর থেকে এশা, বিতর ও জুমা",pg:"rakat"},{id:"hadith",t:"হাদিস পড়ি",s:"সহিহ বুখারি, সহিহ মুসলিম ও আরও",pg:"hadith"},{id:"bhul",t:"প্রচলিত ভুল (কুসংস্কার)",s:"সব তালিকা ও বিষয় অনুযায়ী, সোর্সসহ",pg:"bhul"},{id:"bid",t:"প্রচলিত বিদ‘আত",s:"সব তালিকা ও বিষয় অনুযায়ী, রেফারেন্সসহ",pg:"bid"}];
 window.LIFE=[
 {t:"জন্ম ও প্রথম সপ্তাহ",a:"বয়স ০",f:0,e:0,d:["কানে আজান দেওয়া আলেমদের কাছে পছন্দনীয় আমল।","৭ম দিনে সুন্দর অর্থবহ নাম রাখা ও আকিকা করা।"],m:[["আকিকা অনেক পরে করলেও চলে।","৭ম দিন সুন্নত। ছুটে গেলে পরে করা যাবে কি না আলেমদের মতভেদ আছে, তাই দেরি না করে আলেমের কাছে জানুন।"]],s:"বুখারি, তিরমিজি, আবু দাউদ",p:"ভালো অর্থের নাম ঠিক করে রাখুন।"},
 {t:"শৈশব",a:"১–৬ বছর",f:1,e:6,d:["আল্লাহর পরিচয়, কালেমা ও ছোট দোয়া শেখানো।","বিসমিল্লাহ, সালাম ও ডান হাতে খাওয়ার আদব।","খৎনা শৈশবে সেরে নেওয়া ভালো।"],m:[["খৎনার নির্দিষ্ট সময় নেই, যখন ইচ্ছা করা যায়।","কুরআন-হাদিসে নির্দিষ্ট বয়স নেই, তবে আলেমগণ বালেগ হওয়ার আগে শৈশবেই করা ভালো বলেছেন। কেউ সুন্নত, কেউ ওয়াজিব বলেন; দেরি না করাই উত্তম।"]],s:"বুখারি, মুসলিম",p:"নামাজ শেখানোর প্রস্তুতি নিন।"},
@@ -1231,7 +1261,7 @@ const esc2=t=>String(t).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}
 function curStage(){const g=+S.age;if(!(g>=0)||S.age===""||S.age==null)return -1;return LIFE.findIndex(x=>x.f!=null&&g>=x.f&&g<=x.e)}
 function menuUp(){const n=(S.p.n||"").trim(),im=S.p.img;
   $("p-menu").innerHTML=`<h2>মেনু</h2><div class="mh">আমার অ্যাকাউন্ট</div><button class="mc pf" data-a="go" data-v="me"><span class="ic" style="${im?`background-image:url('${im}')`:""}">${im?"":esc2(n.charAt(0)||"আ")}</span><div><b>${esc2(n||"প্রোফাইল")}</b><small>${bn(streak())} দিনের স্ট্রিক · প্রোফাইল দেখুন</small></div><span class="go">›</span></button>
-  <div class="mh">ইসলামিক জ্ঞান</div>${TOPICS.map(t=>`<button class="mc" data-a="go" data-v="${t.pg}"><span class="ic">📖</span><div><b>${t.t}</b><small>${t.s}</small></div><span class="go">›</span></button>`).join("")}
+  <div class="mh">ইসলামিক জ্ঞান</div>${TOPICS.map(t=>`<button class="mc" data-a="go" data-v="${t.pg}"><span class="ic">📖</span><div><b>${t.t}</b><small>${t.pg==="hadith"&&!hadithOpen()?"🔒 লেভেল ১-এ আনলক হবে":t.s}</small></div><span class="go">›</span></button>`).join("")}
   <div class="mh">সেটিংস ও ব্যাকআপ</div><button class="mc" data-a="go" data-v="me"><span class="ic">⚙</span><div><b>থিম, লেখার আকার, ব্যাকআপ</b><small>প্রোফাইল পেজে পাবেন</small></div><span class="go">›</span></button><button class="mc" data-a="swap"><span class="ic">⇄</span><div><b>মোড বদলান</b><small>ট্রেনিং বা এক্সপার্ট মোড</small></div><span class="go">›</span></button>`}
 function knowUp(){const c=curStage();if(c>=0&&!window.KOi){KO.add(c);window.KOi=1}
   $("p-know").innerHTML=`<button class="bk" data-a="back" aria-label="পেছনে যান"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>পেছনে</button><h2>প্রয়োজনীয় জ্ঞান</h2><div class="card"><div class="sec">জীবনের সফর</div><div style="font-size:.88rem;color:var(--mut);line-height:1.6">জন্ম থেকে মৃত্যু: কোন বয়সে কী করণীয়, আর কোথায় ভুল ধারণা আছে।</div><div class="agr"><input id="ag" type="number" inputmode="numeric" min="0" max="120" placeholder="বয়স" value="${S.age??""}" aria-label="আপনার বয়স"><small>বয়স দিলে আপনার বর্তমান ধাপ চিহ্নিত হবে (ঐচ্ছিক, শুধু আপনার ফোনে থাকে)</small></div></div>
@@ -1284,6 +1314,59 @@ $("p-bid").innerHTML=`${back}<h2>প্রচলিত বিদ‘আত</h2><d
 const _g5=go;go=function(p){if(p==="bid"){document.querySelectorAll(".pg").forEach(e=>e.classList.toggle("on",e.id==="p-bid"));document.querySelectorAll(".nav button").forEach((b,i)=>b.classList.toggle("on",i===3));bidUp();window.scrollTo(0,0);return}$("p-bid").classList.remove("on");_g5(p)};
 document.addEventListener("click",e=>{const t=e.target.closest('[data-a="dt"],[data-a="dko"]');if(!t)return;const v=+t.dataset.v;if(t.dataset.a==="dt"){BDT=v;BDC=""}else{const w=BDK.has(v);BDK.clear();w||BDK.add(v)};bidUp()});
 document.addEventListener("click",e=>{const t=e.target.closest('[data-a="dc"]');if(!t)return;BDC=t.dataset.v||"";bidUp();window.scrollTo(0,0)});
+/* ===== A57: হাদিস পড়ি (বই কার্ড, রিডিং পেজ, দৈনিক নোট, লেভেল লক) ===== */
+const HTEST=100,HBK=[
+ {id:'bukhari',n:'সহিহ বুখারি',ar:'صحيح البخاري',tot:7563,rd:1},
+ {id:'muslim',n:'সহিহ মুসলিম',ar:'صحيح مسلم',tot:3033,rd:1},
+ {id:'abudawud',n:'সুনান আবু দাউদ',ar:'سنن أبي داود',tot:5274},
+ {id:'tirmidhi',n:'জামে আত তিরমিজি',ar:'جامع الترمذي',tot:3956},
+ {id:'riyad',n:'রিয়াদুস সালিহীন',ar:'رياض الصالحين',tot:1896}];
+/* বাংলা টেক্সট যুক্ত করতে: HTXT.muslim[১]=["বর্ণনাকারী:","হাদিসের টেক্সট"]। বুখারির টেক্সট HB থেকে আসে */
+window.HTXT=window.HTXT||{muslim:{}};
+let HB_CUR='bukhari',hlpF=false;
+const BKB='<button class="bk" data-a="back" aria-label="পেছনে যান"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>পেছনে</button>';
+NAVI.hadith=3;NAVI.hbook=3;
+function hadithOpen(){return S.app!=="train"||!!(window.tzLv&&window.tzLv()>=1)}
+function hread(b){if(b==='bukhari')return rd();S.hm=S.hm||{};return S.hm[b]||(S.hm[b]=[])}
+function htext(b,n){if(b==='bukhari')return HB[n]||null;return (HTXT[b]&&HTXT[b][n])||null}
+function hmark(b,n){const L=hread(b);if(!L.includes(n))L.push(n);S.hl=S.hl||{};const k=key(new Date()),d=S.hl[k]=S.hl[k]||{},a=d[b]=d[b]||[];if(!a.includes(n))a.push(n);save()}
+function hunmark(b,n){const L=hread(b),i=L.indexOf(n);if(i>-1)L.splice(i,1);S.hl=S.hl||{};Object.keys(S.hl).forEach(k=>{const d=S.hl[k];if(d[b]){d[b]=d[b].filter(x=>x!==n);if(!d[b].length)delete d[b];if(!Object.keys(d).length)delete S.hl[k]}});save()}
+function hTotalRead(){return HBK.reduce((s,b)=>s+hread(b.id).length,0)}
+function hranges(L){const a=[...new Set(L)].sort((x,y)=>x-y),R=[];a.forEach(x=>{const t=R[R.length-1];if(t&&x===t[1]+1)t[1]=x;else R.push([x,x])});return R.map(r=>r[0]===r[1]?bn(r[0]):bn(r[0])+'–'+bn(r[1])).join('، ')}
+function hadithUp(){
+  const tk=key(new Date()),HL=S.hl||{};
+  const td=HBK.reduce((s,b)=>s+((HL[tk]||{})[b.id]||[]).length,0);
+  const dys=Object.keys(HL).filter(k=>HBK.some(b=>(HL[k][b.id]||[]).length)).sort().reverse();
+  const notes=HBK.map(b=>{const L=hread(b.id);return L.length?`<div class="hnr"><b>${b.n}</b><span>${bn(L.length)}টি হাদিস পড়া হয়েছে · হাদিস নং ${hranges(L)}</span><div class="bar"><i style="width:${Math.max(1,L.length/b.tot*100).toFixed(2)}%"></i></div></div>`:''}).join('');
+  const books=HBK.map(b=>{const L=hread(b.id);return `<button type="button" class="hbk${b.rd?'':' soon'}" data-a="hbo" data-v="${b.id}" aria-label="${b.n}"><span class="hsp"></span><span class="hcv"><span class="har">${b.ar}</span><span class="hnm">${b.n}</span><span class="hdv"></span><span class="hct">সর্বমোট হাদিস ${bn(b.tot)} টি</span>${b.rd?(L.length?`<span class="hpr">${bn(L.length)}টি পড়া</span>`:''):'<span class="hpr">শীঘ্রই আসছে</span>'}</span></button>`}).join('');
+  const hist=dys.slice(0,14).map(k=>{const d=HL[k],ls=HBK.filter(b=>(d[b.id]||[]).length).map(b=>`<div class="hnl"><span>${b.n}</span><b>${hranges(d[b.id])} (${bn(d[b.id].length)}টি)</b></div>`).join('');return `<div class="hnd"><div class="hdt">${k===tk?'আজ':dd(P(k),{day:'numeric',month:'long'})}</div>${ls}</div>`}).join('');
+  $("p-hadith").innerHTML=BKB+'<h2>হাদিস পড়ি</h2>'+
+   `<div class="card st3"><div><b>${bn(td)}</b><small>আজ পড়া</small></div><div><b>${bn(hTotalRead())}</b><small>মোট পড়া</small></div><div><b>${bn(dys.length)}</b><small>পড়ার দিন</small></div></div>`+
+   `<div class="card"><div class="sec">আমার পাঠের নোট</div>${notes||'<div class="em">এখনো কোনো হাদিস পড়া হয়নি। নিচে বই বেছে হাদিস পড়ে “পড়েছি” চিহ্নিত করুন।</div>'}</div>`+
+   `<div class="sh2"><span>হাদিসের বই</span></div><div class="hgr">${books}</div>`+
+   `<div class="ks" style="margin:0 2px 14px">পরীক্ষামূলক সংস্করণ: বুখারি ও মুসলিমের ভেতরে এখন হাদিস নং ১–${bn(HTEST)} আছে। বাকি বইগুলোর রিডিং পেজ পরে যুক্ত হবে।</div>`+
+   `<div class="card"><div class="sec">প্রতিদিনের নোট</div>${hist||'<div class="em">এখনো কোনো দিনের নোট নেই।</div>'}</div>`;
+}
+function hbookUp(){
+  const b=HBK.find(x=>x.id===HB_CUR)||HBK[0],L=hread(b.id);let rows='';
+  for(let n=1;n<=HTEST;n++){const t=htext(b.id,n),on=L.includes(n);
+    rows+=`<div class="hrc${on?' on':''}"><div class="hrh"><span class="dm"><span${n>99?' style="font-size:.66rem"':''}>${bn(n)}</span></span><div class="hrt"><div class="hrn">হাদিস নং ${bn(n)}</div>${t?`<div class="hrs">${esc2(t[0])}</div>`:''}</div></div>${t?`<div class="hrx">${esc2(t[1])}</div>`:'<div class="hrx hph">এই হাদিসের বাংলা টেক্সট এখনো যোগ করা হয়নি।</div>'}<button type="button" class="hrb${on?' on':''}" data-a="hrd" data-b="${b.id}" data-n="${n}"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>${on?'পড়েছি':'পড়েছি চিহ্নিত করুন'}</button></div>`}
+  $("p-hbook").innerHTML=BKB+`<h2>${b.n}</h2><div class="card hbh"><div class="har2">${b.ar}</div><b>${b.n}</b><small>পরীক্ষামূলক তালিকা: হাদিস নং ১ থেকে ${bn(HTEST)} (বইয়ে মোট ${bn(b.tot)}টি)। পরে সব হাদিস যুক্ত হবে।</small>${L.length?`<div class="hrp">${bn(L.length)}টি পড়া হয়েছে · হাদিস নং ${hranges(L)}</div>`:''}</div>${rows}<div class="ks" style="text-align:center;margin:6px 0">আনসিলেক্ট করতে “পড়েছি” বাটনটি চেপে ধরে রাখুন।</div>`;
+}
+const _g6=go;go=function(p){if(p==="hadith"||p==="hbook"){document.querySelectorAll(".pg").forEach(e=>e.classList.toggle("on",e.id==="p-"+p));document.querySelectorAll(".nav button").forEach((b,i)=>b.classList.toggle("on",i===3));p==="hadith"?hadithUp():hbookUp();window.scrollTo(0,0);return}["p-hadith","p-hbook"].forEach(i=>$(i).classList.remove("on"));_g6(p)};
+document.addEventListener("click",e=>{const t=e.target.closest('[data-a="hbo"],[data-a="hrd"]');if(!t)return;
+  if(t.dataset.a==="hbo"){const b=HBK.find(x=>x.id===t.dataset.v);if(!b)return;if(!b.rd){toast(b.n+"-এর রিডিং পেজ পরে যুক্ত হবে।");return}HB_CUR=b.id;go("hbook");return}
+  if(hlpF)return;const b=t.dataset.b,n=+t.dataset.n;
+  if(hread(b).includes(n)){toast("আনসিলেক্ট করতে চেপে ধরে রাখুন");return}
+  const y=window.scrollY;hmark(b,n);if(b==='bukhari')hbtn();hbookUp();window.scrollTo(0,y)});
+{const pb=$("p-hbook");let T0=0,X0=0,Y0=0;
+ pb.addEventListener("pointerdown",e=>{const r=e.target.closest(".hrb.on");if(!r)return;X0=e.clientX;Y0=e.clientY;clearTimeout(T0);
+  T0=setTimeout(()=>{hlpF=true;setTimeout(()=>{hlpF=false},500);try{if(navigator.vibrate)navigator.vibrate(30)}catch(_){}
+   const y=window.scrollY;hunmark(r.dataset.b,+r.dataset.n);if(r.dataset.b==='bukhari')hbtn();hbookUp();window.scrollTo(0,y)},600)});
+ pb.addEventListener("pointermove",e=>{if(Math.abs(e.clientX-X0)>10||Math.abs(e.clientY-Y0)>10)clearTimeout(T0)});
+ ["pointerup","pointercancel","pointerleave"].forEach(n=>pb.addEventListener(n,()=>clearTimeout(T0)));
+ pb.addEventListener("contextmenu",e=>{if(e.target.closest(".hrb"))e.preventDefault()})}
+
 /* ===== A25: নেভিগেশন হিস্ট্রি ===== */
 let NAV=[],CURP="home";
 document.querySelector(".nav").addEventListener("click",()=>{window.__tab=1},true);
@@ -1294,6 +1377,8 @@ go=function(p,isBack){const t=window.__tab;window.__tab=0;
   else if(!isBack&&p!==CURP)NAV.push(CURP);
   CURP=p;_gN(p);setNav(p)};
 document.addEventListener("click",e=>{if(e.target.closest('[data-a="back"]')){const p=NAV.pop()||"home";go(p,true)}});
+
+const _g7=go;go=function(p,b){if((p==="hadith"||p==="hbook")&&!hadithOpen()){toast("হাদিস পড়ি পেজ লেভেল ১-এ আনলক হবে। ৪০ দিনের ট্রেনিং চালিয়ে যান, ইনশাআল্লাহ।");return}_g7(p,b)};
 
 /* ===== নতুন হোম (Home 08): ক্যালেন্ডার ক্যারোসেল, হাদিস কার্ড, শর্টকার্ট ক্যারোসেল ===== */
 (function(){
@@ -1370,10 +1455,12 @@ function hijriBD(d){
     return{day:g('day'),m:g('month')};
   }catch(e){return null}
 }
-const setM=d=>{
+const fmtM=d=>{
   const g=d.toLocaleDateString('bn-BD',{month:'long'}),h=hijriBD(d);
-  mlab.innerHTML=g+(h?' <span class="h8sep">|</span> '+bn(h.day)+' '+HM[h.m-1]:'');
+  return g+(h?' <span class="h8sep">|</span> '+bn(h.day)+' '+HM[h.m-1]:'');
 };
+window.h8fmtM=fmtM;
+const setM=d=>{mlab.innerHTML=fmtM(d)};
 setM(today);
 const CAL=Strip($('h8cal'),days,{
   start:BACK,
@@ -1402,6 +1489,7 @@ const IC8={
 const SH8=[
  {n:'মেনু',i:IC8.menu,pg:'menu'},{n:'প্রোফাইল',i:IC8.prof,pg:'me'},{n:'ভুল ধারণা',i:IC8.bhul,pg:'bhul'},{n:'বিদআত',i:IC8.bidat,pg:'bid'},
  {n:'আজকের আমল',i:IC8.amal,pg:'amal',sub:' '},
+ {n:'হাদিস পড়ি',i:'M6 3h12a1 1 0 0 1 1 1v16l-7-3-7 3V4a1 1 0 0 1 1-1ZM9 8h6M9 11.5h6',pg:'hadith',sub:' '},
  {n:'তাসবিহ',i:IC8.tasbih,pg:'tasbih'},{n:'রিভিউ',i:IC8.review,pg:'review'},{n:'রাকাত',i:IC8.rakat,pg:'rakat'},{n:'জ্ঞান',i:IC8.gyan,pg:'know'}
 ];
 const ICS=[1,.68,.62,.59,.56],LBS=[1,.7,.67,.63,.6];
@@ -1410,7 +1498,7 @@ Strip($('h8shc'),SH8,{
   start:4,loop:true,
   size:W=>{const s=Math.min(W,430)/390;
     return{w:[76,44,40,38,36].map(x=>x*s),h:[144,124,112,102,94].map(x=>x*s),gap:6*s,H:168*s,s}},
-  inner:it=>'<svg class="h8ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="'+it.i+'"/></svg><span class="h8lb">'+it.n+'</span>'+(it.sub?'<span class="h8sb"'+(it.pg==='amal'?' id="h8amalSub"':'')+'>'+it.sub+'</span>':''),
+  inner:it=>'<svg class="h8ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="'+it.i+'"/></svg><span class="h8lb">'+it.n+'</span>'+(it.sub?'<span class="h8sb"'+(it.pg==='amal'?' id="h8amalSub"':it.pg==='hadith'?' id="h8hadSub"':'')+'>'+it.sub+'</span>':''),
   style:(b,d,g,w,h,z,it)=>{
     const s=z.s,ic=b.querySelector('.h8ic'),lb=b.querySelector('.h8lb'),sb=b.querySelector('.h8sb');
     ic.style.top=(h*.17)+'px';ic.style.transform='scale('+(ICS[d]*s).toFixed(3)+')';
@@ -1455,7 +1543,7 @@ drawPaper();
   r.addEventListener('pointerdown',()=>{
     long=false;clear();
     if(rd().includes(hcur))timer=setTimeout(()=>{
-      long=true;const L=rd(),i=L.indexOf(hcur);if(i>-1)L.splice(i,1);save();hbtn();
+      long=true;hunmark('bukhari',hcur);hbtn();
       try{if(navigator.vibrate)navigator.vibrate(30)}catch(e){}
     },600);
   });
@@ -1464,7 +1552,7 @@ drawPaper();
   r.addEventListener('click',()=>{
     if(long){long=false;return}
     const L=rd();
-    if(!L.includes(hcur)){L.push(hcur);save();hbtn()}
+    if(!L.includes(hcur)){hmark('bukhari',hcur);hbtn()}
     else toast('আনসিলেক্ট করতে চেপে ধরে রাখুন');
   });
 })();
@@ -1473,12 +1561,13 @@ drawPaper();
 /* হোম খোলার সময়: আজকের আমলের অগ্রগতি, হেডার ও হাদিস হালনাগাদ */
 function homeNew(){
   const e=$('h8amalSub');
-  if(e){const k=key(today);e.textContent=bn(doneIds(k).length)+'/'+bn(actFor(k).length)+' সম্পন্ন'}
+  if(e){if(S.app==='train'&&window.tzToday){const a=tzToday();e.textContent=bn(a[0])+'/'+bn(a[1])+' সম্পন্ন'}else{const k=key(today);e.textContent=bn(doneIds(k).length)+'/'+bn(actFor(k).length)+' সম্পন্ন'}}
+  const hs=$('h8hadSub');if(hs)hs.textContent=hadithOpen()?bn(hTotalRead())+'টি পড়া':'🔒 লেভেল ১';
   topUp();
   hadithDaily();
 }
 
-load();applyTheme();homeNew();hadithDaily();hadithMidnight();applyApp();if(!S.app)openCh();else if(S.app==="train")go("home");
+load();applyTheme();homeNew();hadithDaily();hadithMidnight();applyApp();if(!S.app)openCh();
 </script>
 <script type="module">
 import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
