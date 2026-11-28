@@ -693,6 +693,39 @@ body.qa-on .nav svg{stroke:currentColor}
 #p-menu .mc.qa-mc .ic{background:linear-gradient(135deg,#7c52e0,#5a32b4)!important;color:#fff!important;display:grid;place-items:center}
 body.qa-on #rtmd,body.qa-on #nzmd{display:none!important}
 </style>
+<style id="qapremium">
+body.qa-on{--bg:#f4f9f6;--card:#fff;--ink:#12342a;--mut:#6b857a;--line:#e5efe9;--cb:#e1ede7;--ac:#176650;--soft:#e9f3ee;--sh:0 10px 28px -16px rgba(17,87,74,.3);--ng:linear-gradient(135deg,#1f7a63,#11574a);--pgold:#c9a24b;--qa1:#c9a24b;--qa2:#2f9e7a;--qa3:#176650}
+:root[data-theme="dark"] body.qa-on{--bg:#0b1511;--card:#12201a;--ink:#e8f4ee;--mut:#93aea2;--line:#1f332a;--cb:#1e3229;--ac:#5cc9a5;--soft:#172b23;--sh:0 10px 28px -16px rgba(0,0,0,.6)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body.qa-on{--bg:#0b1511;--card:#12201a;--ink:#e8f4ee;--mut:#93aea2;--line:#1f332a;--cb:#1e3229;--ac:#5cc9a5;--soft:#172b23}}
+#p-qa .qhero{background:linear-gradient(135deg,#1f7a63 0%,#0e5a45 60%,#0a4538 100%);box-shadow:0 22px 40px -18px rgba(10,69,56,.55),inset 0 1px 0 rgba(255,255,255,.16)}
+#p-qa .qseg button.on{box-shadow:0 4px 12px -4px rgba(17,87,74,.3)}#p-qa .qat{background:#0a4538}
+#p-qa .qzc{padding:14px 16px}#p-qa .qz1{margin:8px 0;color:var(--ink);font-weight:600;line-height:1.55;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#p-qa .qzm{display:flex;justify-content:space-between;gap:8px;color:var(--mut);font-size:.76rem}#p-qa .qzr{display:flex;align-items:center;justify-content:space-between;margin-top:6px}
+#p-qa .qzm2{display:block;color:var(--mut);font-size:.76rem;margin:2px 0 4px}
+#p-qa .qzbm{width:38px;height:38px;border-radius:50%;border:1px solid var(--cb);background:var(--card);color:var(--mut);display:grid;place-items:center;cursor:pointer;transition:.2s}
+#p-qa .qzbm.on{background:var(--ac);color:#fff;border-color:var(--ac)}#p-qa .qzbm.on svg{fill:currentColor}
+#p-qa .qzft{display:flex;gap:12px;align-items:center;margin-bottom:6px}#p-qa .qzft>span{width:42px;height:42px;border-radius:14px;background:var(--ng);color:#fff;display:grid;place-items:center}#p-qa .qzft b{display:block;color:var(--ink)}#p-qa .qzft small{color:var(--mut);font-size:.78rem}
+#p-qa .qzsw{display:flex;gap:12px;align-items:center;margin:12px 0;cursor:pointer;position:relative}#p-qa .qzsw input{position:absolute;opacity:0;width:1px;height:1px}
+#p-qa .qzsw i{width:44px;height:26px;border-radius:99px;background:var(--line);position:relative;flex:none;transition:.2s}#p-qa .qzsw i::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.2);transition:.2s}
+#p-qa .qzsw input:checked+i{background:var(--ac)}#p-qa .qzsw input:checked+i::after{transform:translateX(18px)}#p-qa .qzsw span{font-size:.9rem;color:var(--ink);font-weight:600}#p-qa .qzsw small{display:block;font-weight:400;color:var(--mut);font-size:.76rem}
+#p-qa input:disabled{opacity:.5}#p-qa .ql small{font-weight:400}
+#p-qa .qzl{display:flex;align-items:center;gap:12px;padding:16px;border-radius:24px;margin:0 0 12px;background:linear-gradient(135deg,color-mix(in srgb,var(--pgold) 16%,var(--card)),var(--card));border:1px solid color-mix(in srgb,var(--pgold) 45%,var(--cb))}
+#p-qa .qzl .qbtn{width:auto;margin:0;padding:10px 14px;font-size:.85rem;white-space:nowrap}#p-qa .qzli{width:44px;height:44px;border-radius:14px;background:var(--ng);color:#fff;display:grid;place-items:center;flex:none}
+#p-qa .qzl div{flex:1;min-width:0}#p-qa .qzl b{display:block;color:var(--ink);font-size:.92rem}#p-qa .qzl small{color:var(--mut);font-size:.76rem}
+#p-qa .qzov{position:fixed;inset:0;z-index:70;display:flex;align-items:flex-end;justify-content:center}
+#p-qa .qzbd{position:absolute;inset:0;background:rgba(5,30,24,.5);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);animation:qzf .2s}
+#p-qa .qzsh{position:relative;width:100%;max-width:520px;max-height:90vh;overflow:auto;background:var(--card);border-radius:28px 28px 0 0;padding:10px 20px calc(26px + env(safe-area-inset-bottom,0px));animation:qzu .3s cubic-bezier(.2,.8,.2,1)}
+#p-qa .qzgr{width:42px;height:4px;border-radius:9px;background:var(--line);margin:0 auto 14px}#p-qa .qzx{position:absolute;right:14px;top:14px;width:34px;height:34px;border-radius:50%;border:0;background:var(--soft);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+@keyframes qzu{from{transform:translateY(40px);opacity:0}}@keyframes qzf{from{opacity:0}}
+#p-qa .qzfull{margin:10px 0;color:var(--ink);line-height:1.85;font-size:.98rem}
+#p-qa .qzlet{background:color-mix(in srgb,var(--pgold) 8%,var(--card));border:1px solid color-mix(in srgb,var(--pgold) 35%,transparent);border-radius:22px;padding:20px 18px;margin-top:6px}
+#p-qa .qzlh{display:flex;align-items:center;gap:10px;color:var(--ac);font-weight:700;margin-bottom:12px}#p-qa .qzq{font-weight:700;color:var(--ink);line-height:1.75;margin:0}
+#p-qa .qzsep{margin:18px 0 8px;text-align:center;color:var(--pgold);font-size:.8rem;font-weight:700;letter-spacing:.6px}#p-qa .qzans{color:var(--ink);line-height:1.95;font-size:.96rem}
+#p-qa .qzref{margin-top:14px;padding:12px 14px;border-radius:14px;background:var(--soft);font-size:.86rem;line-height:1.7;color:var(--ink)}#p-qa .qzref b{display:block;color:var(--ac);margin-bottom:4px;font-size:.78rem}
+#p-qa .qzsig{margin-top:18px;text-align:right}#p-qa .qzsig b{display:block;color:var(--ink)}#p-qa .qzsig small{color:var(--mut)}
+#p-qa .qzpv{margin-top:8px;padding:12px 14px;border-radius:16px;border:1px dashed var(--cb);background:var(--soft)}#p-qa .qzpv div{display:flex;justify-content:space-between;padding:4px 0;font-size:.88rem;color:var(--ink)}#p-qa .qzpv small{color:var(--mut);font-size:.88rem}
+#p-qa .qzdot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#c9a24b;margin-left:5px}
+</style>
 </head>
 <body>
 <svg id="tzsprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs>
@@ -848,7 +881,7 @@ body.qa-on #rtmd,body.qa-on #nzmd{display:none!important}
     <div class="msg" id="bm"></div></div>
   <button class="lk" data-a="wipe">সব ডেটা মুছে নতুন করে শুরু</button>
   <button class="lk" data-a="swap">মোড বদলান (ট্রেনিং / এক্সপার্ট)</button>
-  <div class="tzft"><div class="tzs" style="--s:13px" role="img" aria-label="Tazkiyah · تزكية"><span class="tzt" style="display:contents"><svg class="tzmk lt" viewBox="40 10 120 170" aria-hidden="true"><use href="#tzm-l"/></svg><svg class="tzmk dk" viewBox="40 10 120 170" aria-hidden="true"><use href="#tzm-d"/></svg></span><div class="tzw"><span class="tzn">Tazkiyah</span><svg class="tza" viewBox="0 0 138.78 65.71" aria-hidden="true"><use href="#tzar"/></svg></div></div><div class="ver">Tazkiyah · v01 · A69</div></div>
+  <div class="tzft"><div class="tzs" style="--s:13px" role="img" aria-label="Tazkiyah · تزكية"><span class="tzt" style="display:contents"><svg class="tzmk lt" viewBox="40 10 120 170" aria-hidden="true"><use href="#tzm-l"/></svg><svg class="tzmk dk" viewBox="40 10 120 170" aria-hidden="true"><use href="#tzm-d"/></svg></span><div class="tzw"><span class="tzn">Tazkiyah</span><svg class="tza" viewBox="0 0 138.78 65.71" aria-hidden="true"><use href="#tzar"/></svg></div></div><div class="ver">Tazkiyah · v01 · A70</div></div>
 </section>
 
 <section class="pg" id="p-train" style="padding:0 0 100px"><div id="train-host"></div></section>
@@ -2035,7 +2068,7 @@ document.addEventListener("click",async e=>{
 <script type="module">
 import {getApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {getAuth,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import {getFirestore,doc,getDoc,setDoc,addDoc,collection,getDocs,query,where,limit,orderBy,writeBatch,updateDoc,deleteDoc} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import {getFirestore,doc,getDoc,setDoc,addDoc,collection,getDocs,query,where,limit,orderBy,writeBatch,updateDoc,deleteDoc,onSnapshot} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 const QAS=(function(){
 const BN='০১২৩৪৫৬৭৮৯',Y='\uE000';
 function norm(s){
@@ -2175,19 +2208,19 @@ const IC={
  set:'<path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/>'
 };
 const ico=(k,s)=>`<svg viewBox="0 0 24 24" width="${s||18}" height="${s||18}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[k]}</svg>`;
-const ST={tab:"ask",sub:"",user:null,roles:{},pub:[],eps:[],fpub:[],mine:[],fmine:[],adm:{q:[],f:[]},ld:{pub:0,mine:0,adm:0},err:{},draft:"",fdraft:"",fcat:"",qcat:"",ep:"",open:{},arch:"",fq:"",ack:0,fack:0,busy:0,at:0,edit:"",done:null};
+const ST={sel:[],saved:{},det:null,accI:{},hide:0,qname:"",qaddr:"",acc:{},tab:"ask",sub:"",user:null,roles:{},pub:[],eps:[],fpub:[],mine:[],fmine:[],adm:{q:[],f:[]},ld:{pub:0,mine:0,adm:0},err:{},draft:"",fdraft:"",fcat:"",qcat:"",ep:"",open:{},arch:"",fq:"",ack:0,fack:0,busy:0,at:0,edit:"",done:null};
 let db=null,auth=null,ix=null,fix=null,timer=0,ready=0;
 const CK="tz_qa_cache_v1";
 try{const c=JSON.parse(localStorage.getItem(CK)||"null");if(c){ST.pub=c.pub||[];ST.eps=c.eps||[];ST.fpub=c.fpub||[]}}catch(e){}
 function init(){if(ready)return true;try{const a=getApp();db=getFirestore(a);auth=getAuth(a);ready=1;
-  onAuthStateChanged(auth,u=>{ST.user=u||null;if(u)loadRoles()});ST.user=auth.currentUser;return true}catch(e){return false}}
+  startSel();onAuthStateChanged(auth,u=>{ST.user=u||null;stopL();if(u){startL();loadRoles()}else{ST.mine=[];ST.saved={};ST.roles={};ST.adm={q:[],f:[]}}});ST.user=auth.currentUser;if(ST.user)startL();return true}catch(e){return false}}
 const uid=()=>ST.user&&ST.user.uid;
 function reindex(){ix=QAS.build(ST.pub.map(x=>({id:x.id,question:x.question,short:x.short,ref:x})));fix=QAS.build(ST.fpub.map(x=>({id:x.id,question:x.question,short:(x.answer||"").slice(0,300),ref:x})))}
 reindex();
 const toast=(m,bad)=>{const t=$("qaToast");if(!t)return;t.textContent=m;t.className="qat on"+(bad?" bad":"");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("on"),2800)};
 const fdate=ms=>ms?new Date(ms).toLocaleDateString("bn-BD",{day:"numeric",month:"long",year:"numeric"}):"";
 function nextSat(){const d=new Date();d.setHours(0,0,0,0);const k=(6-d.getDay()+7)%7;d.setDate(d.getDate()+k);return {d,k}}
-async function loadRoles(){try{const s=await getDoc(doc(db,"roles",uid()));ST.roles=s.exists()?s.data():{}}catch(e){ST.roles={}}if(on()){render();if((ST.roles.admin||ST.roles.mufti)&&ST.tab==='adm'){ST.at=Date.now();loadAdm()}}}
+async function loadRoles(){try{const s=await getDoc(doc(db,"roles",uid()));ST.roles=s.exists()?s.data():{}}catch(e){ST.roles={}}startAdm();if(on()){render();if((ST.roles.admin||ST.roles.mufti)&&ST.tab==='adm'){ST.at=Date.now();loadAdm()}}}
 const isA=()=>!!ST.roles.admin,isM=()=>!!ST.roles.mufti;
 const withId=s=>{const o=s.data();o.id=s.id;return o};
 async function loadPub(){
@@ -2200,19 +2233,12 @@ async function loadPub(){
   }catch(e){ST.ld.pub=3;ST.err.pub=1}
   if(on())render();
 }
-async function loadMine(){
-  if(!uid())return;ST.ld.mine=1;
-  try{
-    const [a,b]=await Promise.all([getDocs(query(collection(db,"qa_questions"),where("uid","==",uid()),limit(60))),getDocs(query(collection(db,"fatwa_requests"),where("uid","==",uid()),limit(40)))]);
-    ST.mine=a.docs.map(withId).sort((x,y)=>y.createdAt-x.createdAt);ST.fmine=b.docs.map(withId).sort((x,y)=>y.createdAt-x.createdAt);ST.ld.mine=2;
-  }catch(e){ST.ld.mine=3}
-  if(on())render();
-}
+async function loadMine(){if(uid())startL()}
 async function loadAdm(){
   if(!isA()&&!isM())return;ST.ld.adm=1;ST.err.adm=0;if(on())render();
   try{
     const out={q:[],f:[]};
-    if(isA()){const a=await getDocs(query(collection(db,"qa_questions"),where("status","in",["pending","approved","answered"]),limit(300)));out.q=a.docs.map(withId).sort((x,y)=>x.createdAt-y.createdAt)}
+    out.q=ST.adm.q||[];
     const f=await getDocs(query(collection(db,"fatwa_requests"),where("status","in",isA()?["submitted","with_mufti"]:["with_mufti"]),limit(200)));
     out.f=f.docs.map(withId).sort((x,y)=>x.createdAt-y.createdAt);ST.adm=out;ST.ld.adm=2;
   }catch(e){ST.ld.adm=3;ST.err.adm=1}
@@ -2234,7 +2260,7 @@ function hero(){
   <div class="qhs">পরবর্তী পর্ব: <b>${when}</b></div></div>
   <div class="qtls">${tile("a","book",bn(ST.pub.length),"প্রকাশিত প্রশ্ন","t1")}${tile("b","cal",bn(ST.eps.length),"মোট পর্ব","t2")}${tile("c","gavel",bn(ST.fpub.length),"ফতোয়া","t3")}</div>`;
 }
-function tabs(){
+function tabsOld(){
   const T=[["ask","প্রশ্নোত্তর"],["arch","আর্কাইভ"],["fat","ফতোয়া"]];if(isA()||isM())T.push(["adm",isA()?"ব্যবস্থাপনা":"মুফতি"]);
   return `<div class="qseg" role="tablist">${T.map(t=>`<button role="tab" aria-selected="${ST.tab===t[0]}" class="${ST.tab===t[0]?"on":""}" data-q="tab" data-v="${t[0]}">${t[1]}</button>`).join("")}</div>`;
 }
@@ -2257,8 +2283,8 @@ function myList(arr,map,empty){
   return arr.slice(0,8).map(x=>{const s=map[x.status]||["",""];return `<div class="qrow"><div><b>${esc(x.text.length>110?x.text.slice(0,110)+"…":x.text)}</b><small>${fdate(x.createdAt)}${x.rejectReason?` · কারণ: ${esc(x.rejectReason)}`:""}</small></div>${chip(s[0],s[1])}</div>`}).join("");
 }
 function lastEp(){const e=ST.eps[0];if(!e)return "";
-  return `<div class="qcard qep"><div class="qeh"><span>${ico("cal",18)}</span><div><b>সাপ্তাহিক পর্ব ${bn(e.no)}</b><small>${fdate(e.publishedAt)} · ${bn(e.count||0)}টি প্রশ্নোত্তর</small></div></div><button class="qbtn s" data-q="ep" data-v="${esc(e.id)}">পর্বটি দেখুন</button></div>`}
-function askTab(){
+  return `<div class="qcard qep"><div class="qeh"><span>${ico("cal",18)}</span><div><b>প্রশ্নোত্তর পর্ব ${pn(e.no)}</b><small>${fdate(e.publishedAt)} · ${bn(e.count||0)}টি প্রশ্নোত্তর</small></div></div><button class="qbtn s" data-q="ep" data-v="${esc(e.id)}">পর্বটি দেখুন</button></div>`}
+function askTabOld(){
   const lim=ST.mine.filter(x=>x.status==="pending").length;
   let h=`<div class="qcard"><label class="ql" for="qaIn">আপনার প্রশ্ন</label>
   <textarea id="qaIn" rows="3" maxlength="500" placeholder="যেমন: ওজু ভাঙার কারণ কী কী?" data-q="draft">${esc(ST.draft)}</textarea>
@@ -2276,11 +2302,11 @@ function epList(){
   if(ST.ld.pub===1&&!ST.eps.length)return skel(3);
   if(ST.ld.pub===3&&!ST.eps.length)return state("err","লোড করা যায়নি","ইন্টারনেট সংযোগ দেখে আবার চেষ্টা করুন।",`<button class="qbtn s" data-q="reload">আবার চেষ্টা করুন</button>`);
   if(!ST.eps.length)return state("empty","প্রথম পর্বের অপেক্ষায়","প্রকাশিত পর্বগুলো এখানে সংরক্ষিত থাকবে।");
-  return ST.eps.map(e=>`<button class="qeprow" data-q="ep" data-v="${esc(e.id)}"><span class="qen">${bn(e.no)}</span><div><b>সাপ্তাহিক পর্ব ${bn(e.no)}</b><small>${fdate(e.publishedAt)} · ${bn(e.count||0)}টি প্রশ্নোত্তর</small></div>${ico("chev",18)}</button>`).join("");
+  return ST.eps.map(e=>`<button class="qeprow" data-q="ep" data-v="${esc(e.id)}"><span class="qen">${bn(e.no)}</span><div><b>প্রশ্নোত্তর পর্ব ${pn(e.no)}</b><small>${fdate(e.publishedAt)} · ${bn(e.count||0)}টি প্রশ্নোত্তর</small></div>${ico("chev",18)}</button>`).join("");
 }
 function archTab(){
   if(ST.ep){const e=ST.eps.find(x=>x.id===ST.ep),it=ST.pub.filter(x=>x.episodeId===ST.ep);
-    return `<button class="qlk back" data-q="ep" data-v="">‹ সব পর্ব</button><div class="qcard"><b class="qepT">সাপ্তাহিক পর্ব ${e?bn(e.no):""}</b><small>${e?fdate(e.publishedAt):""}</small></div>`+(it.length?it.map((x,i)=>{const o=ST.open["e"+i];return `<div class="qcard qa"><b>${esc(x.question)}</b>${x.category?chip(x.category):""}<p class="qms">${esc(x.short)}</p>${o?`<div class="qfull">${nl(x.full)}${x.source?`<small class="qsrc">সূত্র: ${esc(x.source)}</small>`:""}</div>`:""}<button class="qlk" data-q="open" data-k="e${i}">${o?"সংক্ষেপে দেখুন":"সম্পূর্ণ উত্তর দেখুন"} ${ico("chev",16)}</button>${isA()?`<button class="qlk r" data-q="aedit" data-v="${esc(x.id)}">সম্পাদনা</button><button class="qlk r" data-q="awd" data-v="${esc(x.id)}">প্রত্যাহার</button>`:""}${isA()&&ST.edit===x.id?editBox(x):""}</div>`}).join(""):state("empty","এই পর্বে কিছু নেই","এই পর্বের প্রশ্নোত্তর পাওয়া যায়নি।"));}
+    return `<button class="qlk back" data-q="ep" data-v="">‹ সব পর্ব</button><div class="qcard"><b class="qepT">প্রশ্নোত্তর পর্ব ${e?pn(e.no):""}</b><small>${e?fdate(e.publishedAt):""}</small></div>`+(it.length?it.map((x,i)=>{const o=ST.open["e"+i];return `<div class="qcard qa"><b>${esc(x.question)}</b>${x.category?chip(x.category):""}<small class="qzm2">${esc(x.publicName||"Anonymous")} · ${fdate(x.publishedAt)}${x.answerer?" · "+esc(x.answerer):""}</small><p class="qms">${esc(x.short)}</p>${o?`<div class="qfull">${nl(x.full)}${x.source?`<small class="qsrc">সূত্র: ${esc(x.source)}</small>`:""}</div>`:""}<button class="qlk" data-q="open" data-k="e${i}">${o?"সংক্ষেপে দেখুন":"সম্পূর্ণ উত্তর দেখুন"} ${ico("chev",16)}</button>${isA()?`<button class="qlk r" data-q="aedit" data-v="${esc(x.id)}">সম্পাদনা</button><button class="qlk r" data-q="awd" data-v="${esc(x.id)}">প্রত্যাহার</button>`:""}${isA()&&ST.edit===x.id?editBox(x):""}</div>`}).join(""):state("empty","এই পর্বে কিছু নেই","এই পর্বের প্রশ্নোত্তর পাওয়া যায়নি।"));}
   let h=`<div class="qcard"><label class="ql" for="qaAs">আর্কাইভে খুঁজুন</label><input id="qaAs" type="search" placeholder="প্রশ্ন বা বিষয় লিখুন" value="${esc(ST.arch)}" data-q="arch"></div><div id="qaAr">`;
   if(ST.arch.trim().length>=2){
     const r=QAS.search(ix,ST.arch,{min:.28,limit:20});
@@ -2310,12 +2336,11 @@ function admTab(){
   if(ST.ld.adm===3)return state("err","লোড করা যায়নি","ইন্টারনেট সংযোগ বা অনুমতি দেখে আবার চেষ্টা করুন।",`<button class="qbtn s" data-q="areload">আবার চেষ্টা করুন</button>`);
   const q=ST.adm.q,P=q.filter(x=>x.status==="pending"),A=q.filter(x=>x.status==="approved"),R=q.filter(x=>x.status==="answered");
   let h="";
-  if(isA()){
-    const no=(ST.eps[0]?ST.eps[0].no:0)+1;
-    h+=`<div class="qsec">নতুন প্রশ্ন (${bn(P.length)})</div>`+(P.length?P.map(x=>`<div class="qcard qa"><p class="qmq">${nl(x.text)}</p><small>${fdate(x.createdAt)}${x.cat?" · "+esc(x.cat):""}</small>${catSel("c_"+x.id,x.cat||CATS[0])}<div class="qbr"><button class="qbtn" data-q="qok" data-v="${x.id}">অনুমোদন</button><button class="qbtn s" data-q="qno" data-v="${x.id}">বাতিল</button></div></div>`).join(""):`<div class="qmt0">কোনো নতুন প্রশ্ন নেই।</div>`);
-    h+=`<div class="qsec">উত্তর লেখার অপেক্ষায় (${bn(A.length)})</div>`+(A.length?A.map(x=>`<div class="qcard qa"><p class="qmq">${nl(x.text)}</p>${chip(x.category||"")}${ST.edit===x.id?`<div class="qed"><label class="ql">সংক্ষিপ্ত উত্তর</label><textarea id="eS" rows="2" maxlength="400"></textarea><label class="ql">সম্পূর্ণ উত্তর</label><textarea id="eF" rows="5" maxlength="5000"></textarea><label class="ql">সূত্র (ঐচ্ছিক)</label><input id="eR" maxlength="200"><div class="qbr"><button class="qbtn" data-q="qans" data-v="${x.id}">উত্তর সংরক্ষণ</button><button class="qbtn s" data-q="qedit" data-v="">বাতিল</button></div></div>`:`<button class="qbtn s" data-q="qedit" data-v="${x.id}">উত্তর লিখুন</button>`}</div>`).join(""):`<div class="qmt0">কোনো প্রশ্ন নেই।</div>`);
-    h+=`<div class="qsec">প্রকাশের জন্য প্রস্তুত (${bn(R.length)})</div>`+(R.length?R.map(x=>`<label class="qpk"><input type="checkbox" class="pkc" value="${x.id}" checked><span><b>${esc(x.text.slice(0,90))}</b><small>${esc((x.short||"").slice(0,90))}</small></span></label>`).join("")+`<button class="qbtn" data-q="publish">পর্ব ${bn(no)} প্রকাশ করুন</button>`:`<div class="qmt0">উত্তর দেওয়া প্রশ্ন নেই।</div>`);
-  }
+  const Q=ST.adm.q,by=k=>Q.filter(x=>nst(x)===k),grp=(t,l,em)=>`<div class="qsec">${t} (${bn(l.length)})</div>`+(l.length?l.map(x=>qCard(x,{k:"a",st:1,act:1})).join(""):`<div class="qmt0">${em}</div>`);
+  if(isA())h+=grp("নতুন প্রশ্ন",by("pending"),"কোনো নতুন প্রশ্ন নেই।")+grp("নির্বাচিত প্রশ্ন",by("selected"),"কোনো নির্বাচিত প্রশ্ন নেই।");
+  if(isM())h+=grp("উত্তরের অপেক্ষায়",by("with_mufti"),"মুফতির জন্য কোনো প্রশ্ন নেই।");else if(isA())h+=grp("মুফতির কাছে",by("with_mufti"),"কোনো প্রশ্ন নেই।");
+  if(isA()){const no=(ST.eps[0]?ST.eps[0].no:0)+1,R=by("approved");
+    h+=`<div class="qsec">প্রকাশের জন্য প্রস্তুত (${bn(R.length)})</div>`+(R.length?R.map(x=>`<label class="qpk"><input type="checkbox" class="pkc" value="${x.id}" checked><span><b>${esc(x.text.slice(0,90))}</b><small>${esc((x.short||"").slice(0,90))}${x.answerer?" · "+esc(x.answerer):""}</small></span></label>`).join("")+`<button class="qbtn" data-q="publish">প্রশ্নোত্তর পর্ব ${pn(no)} প্রকাশ করুন</button>`:`<div class="qmt0">অনুমোদিত উত্তর নেই।</div>`)}
   const F=ST.adm.f;
   h+=`<div class="qsec">${isA()&&!isM()?"মাসআলা যাচাই":"ফতোয়া অনুমোদন"} (${bn(F.length)})</div>`;
   if(isA()&&!isM()){h+=F.filter(x=>x.status==="submitted").map(x=>`<div class="qcard qa"><p class="qmq">${nl(x.text)}</p><small>${fdate(x.createdAt)}</small><input id="m_${x.id}" class="qsel" placeholder="মুফতির নাম বা প্রতিষ্ঠান (ঐচ্ছিক)" maxlength="80"><div class="qbr"><button class="qbtn" data-q="fsend" data-v="${x.id}">মুফতির কাছে পাঠান</button><button class="qbtn s" data-q="fno" data-v="${x.id}">বাতিল</button></div></div>`).join("")||`<div class="qmt0">কোনো মাসআলা নেই।</div>`;
@@ -2328,15 +2353,102 @@ function admTab(){
   }
   return h;
 }
+IC.mark='<path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>';IC.mail='<rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/>';IC.x='<path d="M18 6 6 18M6 6l12 12"/>';
+const pn=n=>(n<10?"০":"")+bn(n);
+const nst=x=>x.status==="approved"&&!x.full?"selected":x.status==="answered"?"approved":x.status;
+const SL={pending:["যাচাইয়ের অপেক্ষায়","w"],selected:["নির্বাচিত","a"],with_mufti:["মুফতির কাছে","a"],approved:["অনুমোদিত","a"],published:["প্রকাশিত","g"],rejected:["গ্রহণ করা হয়নি","r"]};
+const who=x=>x.publicName||"Anonymous";
+const LK="tz_qa_letters";
+function opened(id){try{return (JSON.parse(localStorage.getItem(LK)||"[]")).indexOf(id)>-1}catch(e){return false}}
+function markOpen(id){try{const a=JSON.parse(localStorage.getItem(LK)||"[]");if(a.indexOf(id)<0){a.push(id);localStorage.setItem(LK,JSON.stringify(a))}}catch(e){}}
+let un=[],admOn=0,selOn=0,legacy={};
+function rr(){if(!on())return;const a=document.activeElement;if(ST.det&&a&&a.closest&&a.closest(".qzsh"))return;render()}
+function stopL(){un.forEach(f=>{try{f()}catch(e){}});un=[];admOn=0}
+function startL(){
+  if(!uid()||un.length)return;
+  un.push(onSnapshot(query(collection(db,"qa_questions"),where("uid","==",uid())),s=>{ST.mine=s.docs.map(withId).sort((x,y)=>y.createdAt-x.createdAt);ST.ld.mine=2;rr()},()=>{ST.ld.mine=3;rr()}));
+  un.push(onSnapshot(collection(db,"users",uid(),"qa_saved"),s=>{ST.saved={};s.docs.forEach(d=>{ST.saved[d.id]=(d.data()||{}).at||1});rr()},()=>{}));
+  getDoc(doc(db,"users",uid())).then(g=>{ST.acc=g.exists()?g.data():{};if(!ST.qname)ST.qname=ST.acc.name||"";rr()}).catch(()=>{});
+  startAdm();
+}
+function startSel(){
+  if(selOn)return;selOn=1;
+  onSnapshot(query(collection(db,"qa_selected"),orderBy("selectedAt","desc"),limit(100)),s=>{ST.sel=s.docs.map(withId);rr()},()=>{});
+}
+function startAdm(){
+  if(admOn||!uid()||(!isA()&&!isM()))return;admOn=1;
+  const st=isA()?["pending","selected","with_mufti","approved","answered"]:["with_mufti"];
+  un.push(onSnapshot(query(collection(db,"qa_questions"),where("status",...(isA()?["in",st]:["==","with_mufti"])),limit(300)),s=>{
+    ST.adm.q=s.docs.map(withId).sort((x,y)=>x.createdAt-y.createdAt);ST.ld.adm=2;
+    if(isA())ST.adm.q.forEach(x=>{if(x.status==="approved"&&!x.full&&!legacy[x.id]&&!ST.sel.find(y=>y.id===x.id)){legacy[x.id]=1;setDoc(doc(db,"qa_selected",x.id),{text:x.text,cat:x.category||x.cat||"অন্যান্য",publicName:x.publicName||"Anonymous",createdAt:x.createdAt,selectedAt:x.createdAt}).catch(()=>{})}});
+    rr()},()=>{ST.ld.adm=3;ST.err.adm=1;rr()}));
+}
+function bmBtn(id){const o=!!ST.saved[id];return `<button class="qzbm ${o?"on":""}" data-q="bm" data-v="${esc(id)}" aria-pressed="${o}" aria-label="${o?"সংরক্ষণ সরান":"সংরক্ষণ করুন"}">${ico("mark",18)}</button>`}
+function acts(x){const s=nst(x);let b="";
+  if(s==="pending"&&isA())b=`<button class="qbtn" data-q="qsel" data-v="${x.id}">নির্বাচন করুন</button><button class="qbtn s" data-q="qno" data-v="${x.id}">বাতিল</button>`;
+  else if(s==="selected"&&isA())b=`<button class="qbtn" data-q="qmuf" data-v="${x.id}">মুফতির কাছে পাঠান</button>`;
+  else if(s==="with_mufti"&&isM())b=`<button class="qbtn" data-q="det" data-k="a" data-v="${x.id}">উত্তর লিখুন</button>`;
+  return b?`<div class="qbr">${b}</div>`:""}
+function qCard(x,o){const s=nst(x),L=SL[s]||["",""];
+  return `<article class="qcard qzc"><div class="qmh">${chip(x.cat||x.category||"অন্যান্য")}${o.st?chip(L[0],L[1]):""}</div>
+  <p class="qz1">${esc(x.text||x.question)}</p><div class="qzm"><small>${esc(who(x))}</small><small>${fdate(x.createdAt||x.selectedAt)}</small></div>
+  <div class="qzr"><button class="qlk" data-q="det" data-k="${o.k}" data-v="${esc(x.id)}">আরো পড়ুন ${ico("chev",16)}</button>${o.bm?bmBtn(x.id):""}</div>${o.act?acts(x):""}</article>`}
+function answerBlock(p){return `<div class="qzsep">— উত্তর —</div><div class="qzans">${nl(p.full||p.answer)}</div>${p.source?`<div class="qzref"><b>কুরআন ও হাদিসের সূত্র</b>${nl(p.source)}</div>`:""}<div class="qzsig">${p.answerer?`<b>${esc(p.answerer)}</b>`:""}<small>${fdate(p.publishedAt)}</small></div>`}
+function letter(p){return `<div class="qzlet"><div class="qzlh">${ico("mail",22)} আপনার প্রশ্নের উত্তর</div><p class="qzq">${nl(p.question)}</p>${answerBlock(p)}</div>`}
+function mForm(x){return `<div class="qed"><label class="ql" for="mA">আপনার যাচাইকৃত উত্তর</label><textarea id="mA" rows="7" maxlength="5000"></textarea><label class="ql" for="mR">কুরআন / হাদিসের সূত্র (ঐচ্ছিক)</label><input id="mR" maxlength="400"><label class="ql" for="mN">উত্তরদাতার নাম</label><input id="mN" maxlength="80" value="${esc((function(){try{return localStorage.getItem("tz_mufti_name")||""}catch(e){return ""}})())}"><label class="qchk"><input type="checkbox" id="mOk"><span>আমি উত্তরটি যাচাই করেছি এবং অনুমোদন দিচ্ছি</span></label><button class="qbtn" data-q="mans" data-v="${x.id}">অনুমোদন করুন</button></div>`}
+function accBlock(x){if(!isA()&&!isM())return "";const i=ST.accI[x.id];
+  return `<button class="qlk" data-q="acc" data-v="${x.id}">${ico("lock",16)} প্রশ্নকারীর Account Information</button>`+(i?(i==="none"?`<div class="qzpv"><small>তথ্য পাওয়া যায়নি বা দেখার অনুমতি নেই</small></div>`:`<div class="qzpv"><div><small>Account Name</small><b>${esc(i.accName||"—")}</b></div><div><small>Age</small><b>${esc(i.age===""||i.age==null?"—":i.age)}</b></div><div><small>Gender</small><b>${esc(i.gender||"—")}</b></div></div>`):"")}
+function detail(){const d=ST.det;if(!d)return "";const f=(l,id)=>l.find(y=>y.id===id);let b="";
+  const x=d.k==="m"?f(ST.mine,d.id):d.k==="s"?f(ST.sel,d.id):d.k==="a"?f(ST.adm.q,d.id):f(ST.pub,d.id);
+  if(d.k==="l")b=x?letter(x):skel(2);
+  else if(!x)b=skel(2);
+  else{const s=nst(x),L=SL[s]||["",""];
+    b=`<div class="qmh">${chip(x.cat||x.category||"অন্যান্য")}${d.k==="m"||d.k==="a"?chip(L[0],L[1]):""}</div><p class="qzfull">${nl(x.text||x.question)}</p><div class="qzm"><small>${esc(who(x))}</small><small>${fdate(x.createdAt||x.selectedAt||x.publishedAt)}</small></div>`;
+    if(d.k==="p")b+=answerBlock(x);
+    if(d.k==="m"&&s==="published")b+=`<button class="qbtn" data-q="det" data-k="l" data-v="${x.id}">চিঠি খুলুন</button>`;
+    if(d.k==="s")b+=`<div class="qzr"><span></span>${bmBtn(x.id)}</div>`;
+    if(d.k==="a"){b+=acts(x);if(s==="with_mufti"&&isM())b+=mForm(x);b+=accBlock(x)}}
+  return `<div class="qzov"><div class="qzbd" data-q="dx"></div><div class="qzsh" role="dialog" aria-modal="true"><div class="qzgr"></div><button class="qzx" data-q="dx" aria-label="বন্ধ করুন">${ico("x",18)}</button>${b}</div></div>`}
+function tabs(){
+  const n=ST.mine.filter(x=>x.status==="published"&&!opened(x.id)).length;
+  const T=[["ask","প্রশ্ন করুন"],["sel","নির্বাচিত"],["mine","আমার প্রশ্ন"+(n?'<i class="qzdot"></i>':"")],["arch","পর্ব"],["fat","ফতোয়া"]];if(isA()||isM())T.push(["adm",isA()?"ব্যবস্থাপনা":"মুফতি"]);
+  return `<div class="qseg" role="tablist">${T.map(t=>`<button role="tab" aria-selected="${ST.tab===t[0]}" class="${ST.tab===t[0]?"on":""}" data-q="tab" data-v="${t[0]}">${t[1]}</button>`).join("")}</div>`}
+function askTab(){
+  const lim=ST.mine.filter(x=>x.status==="pending").length;
+  let h=`<div class="qcard qzf"><div class="qzft"><span>${ico("q",22)}</span><div><b>নতুন প্রশ্ন</b><small>আপনার প্রশ্ন যোগ্য আলেমের কাছে পৌঁছাবে</small></div></div>
+  <label class="ql" for="qaCat">বিষয়</label><select id="qaCat" class="qsel">${CATS.map(c=>`<option value="${esc(c)}" ${ST.qcat===c?"selected":""}>${esc(c)}</option>`).join("")}</select>
+  <label class="ql" for="qaNm">প্রশ্নকারীর নাম</label><input id="qaNm" maxlength="60" value="${esc(ST.qname)}" ${ST.hide?"disabled":""} placeholder="আপনার নাম">
+  <label class="qzsw"><input type="checkbox" data-q="hide" ${ST.hide?"checked":""}><i></i><span>নাম গোপন রাখুন<small>প্রকাশ্যে “Anonymous” দেখাবে</small></span></label>
+  <label class="ql" for="qaAd">ঠিকানা <small>(গোপন থাকবে, কখনো প্রকাশ হবে না)</small></label><input id="qaAd" maxlength="200" value="${esc(ST.qaddr)}" placeholder="এলাকা / জেলা">
+  <label class="ql" for="qaIn">সম্পূর্ণ প্রশ্ন</label>
+  <textarea id="qaIn" rows="5" maxlength="500" placeholder="যেমন: ওজু ভাঙার কারণ কী কী?">${esc(ST.draft)}</textarea><div class="qrw"><span></span><small id="qaCnt">${bn(ST.draft.length)}/৫০০</small></div>
+  <div id="qaMatch">${matchBox(ST.draft,"q")}</div>
+  ${ST.ack?`<div class="qnote">উত্তরটি যথেষ্ট না হলে নিচের বোতামে নতুন প্রশ্ন জমা দিন।</div>`:""}
+  <button class="qbtn" data-q="submit" ${ST.busy?"disabled":""}>${ST.busy?"জমা হচ্ছে…":ST.ack?"তবুও নতুন প্রশ্ন জমা দিন":"প্রশ্ন জমা দিন"} ${ico("send",16)}</button>
+  <p class="qhint">নির্বাচিত প্রশ্নের উত্তর সাপ্তাহিক পর্বে প্রকাশ করা হয়।${lim>=5?" আপনার ৫টি প্রশ্ন অপেক্ষমাণ আছে।":""}</p></div>`;
+  if(ST.done==="q")h+=`<div class="qcard">${state("ok","প্রশ্ন জমা হয়েছে","“আমার প্রশ্ন” ট্যাবে অবস্থা দেখতে পারবেন।")}</div>`;
+  return h+lastEp()}
+function selTab(){
+  let h=`<div class="qnoteS">${ico("book",20)}<p>এই সপ্তাহে উত্তরের জন্য নির্বাচিত প্রশ্নগুলো। আপনার প্রশ্নের আগে এগুলো দেখে নিতে পারেন, আর আগ্রহের প্রশ্ন সংরক্ষণ করে রাখুন।</p></div><div class="qsec">এই সপ্তাহের নির্বাচিত প্রশ্নসমূহ</div>`;
+  return h+(ST.sel.length?ST.sel.map(x=>qCard(x,{k:"s",bm:1})).join(""):state("empty","এখনো কোনো প্রশ্ন নির্বাচিত হয়নি","নির্বাচিত প্রশ্ন এখানে সঙ্গে সঙ্গে দেখা যাবে।"))}
+function mineTab(){
+  if(!uid())return state("empty","লগ ইন করুন","আপনার প্রশ্ন দেখতে লগ ইন প্রয়োজন।");
+  const L=ST.mine.filter(x=>x.status==="published");let h="";
+  if(L.length){h+=`<div class="qsec">আপনার উত্তরের চিঠি</div>`+L.map(x=>`<div class="qzl"><span class="qzli">${ico("mail",22)}</span><div><b>${opened(x.id)?"উত্তরের চিঠি":"নতুন উত্তর এসেছে"}</b><small>${esc((x.text||"").slice(0,48))}…</small></div><button class="qbtn" data-q="det" data-k="l" data-v="${x.id}">চিঠি খুলুন</button></div>`).join("")}
+  h+=`<div class="qsec">আমার জমা দেওয়া প্রশ্ন</div>`+(ST.ld.mine===1&&!ST.mine.length?skel(2):ST.mine.length?ST.mine.map(x=>qCard(x,{k:"m",st:1})).join(""):state("empty","এখনো কোনো প্রশ্ন জমা দেননি","“প্রশ্ন করুন” ট্যাব থেকে শুরু করুন।"));
+  const ids=Object.keys(ST.saved);
+  h+=`<div class="qsec">উত্তরের অপেক্ষায়</div>`+(ids.length?ids.map(id=>{const q=ST.sel.find(y=>y.id===id);if(q)return qCard(q,{k:"s",bm:1});const p=ST.pub.find(y=>y.id===id);if(p)return qCard({id,text:p.question,cat:p.category,publicName:p.publicName,createdAt:p.publishedAt},{k:"p",bm:1}).replace('<div class="qmh">','<div class="qmh">'+chip("উত্তর এসেছে","g"));return `<div class="qcard qzc"><p class="qz1">প্রশ্নটি আর পাওয়া যাচ্ছে না</p><div class="qzr"><span></span>${bmBtn(id)}</div></div>`}).join(""):`<div class="qmt0">নির্বাচিত প্রশ্নে বুকমার্ক বোতাম চাপলে এখানে জমা থাকবে।</div>`);
+  return h}
+
 function render(){
   const r=root();if(!r)return;
   const keep=document.activeElement&&document.activeElement.id,pos=window.scrollY;
   let body="";
   if(!ready&&!init())body=state("err","লোড করা যায়নি","ইন্টারনেট সংযোগ দেখে আবার চেষ্টা করুন।",`<button class="qbtn s" data-q="reload">আবার চেষ্টা করুন</button>`);
-  else body=hero()+tabs()+(ST.tab==="ask"?askTab():ST.tab==="arch"?archTab():ST.tab==="fat"?fatTab():admTab());
+  else body=hero()+tabs()+(ST.tab==="ask"?askTab():ST.tab==="sel"?selTab():ST.tab==="mine"?mineTab():ST.tab==="arch"?archTab():ST.tab==="fat"?fatTab():admTab());
   if(ST.ld.pub===3&&ST.tab==="ask"&&ready)body=body.replace('<div class="qtls">','<div class="qoff">অফলাইন: সংরক্ষিত তথ্য দেখানো হচ্ছে</div><div class="qtls">');
-  r.innerHTML=hdr()+body+'<div class="qat" id="qaToast" role="status" aria-live="polite"></div>';
-  if(keep&&$(keep)&&/^qa(In|Fin|As)$/.test(keep)){const e=$(keep);e.focus();try{e.setSelectionRange(e.value.length,e.value.length)}catch(_){}}
+  r.innerHTML=hdr()+body+detail()+'<div class="qat" id="qaToast" role="status" aria-live="polite"></div>';
+  if(keep&&$(keep)&&/^qa(In|Fin|As|Nm|Ad)$/.test(keep)){const e=$(keep);e.focus();try{e.setSelectionRange(e.value.length,e.value.length)}catch(_){}}
   window.scrollTo(0,pos);
 }
 function stale(f){return Date.now()-f>45000}
@@ -2354,7 +2466,7 @@ document.addEventListener("input",e=>{
   const t=e.target;if(!t.closest||!t.closest("#p-qa"))return;
   if(t.id==="qaIn"||t.id==="qaFin"){clearTimeout(timer);timer=setTimeout(()=>setDraft(t.value,t.id==="qaFin"?"f":"q"),260);if(t.id==="qaIn")ST.draft=t.value;else ST.fdraft=t.value}
   else if(t.id==="qaAs"){ST.arch=t.value;clearTimeout(timer);timer=setTimeout(()=>{render()},280)}
-  else if(t.id==="qaCat")ST.qcat=t.value;
+  else if(t.id==="qaCat")ST.qcat=t.value;else if(t.id==="qaNm")ST.qname=t.value;else if(t.id==="qaAd")ST.qaddr=t.value;
 });
 async function act(a,v,k,b){
   if(a==="tab"){ST.tab=v;ST.ep="";ST.edit="";ST.done=null;render();if(v==="adm"&&stale(ST.at||0)){ST.at=Date.now();loadAdm()}window.scrollTo(0,0);return}
@@ -2364,16 +2476,27 @@ async function act(a,v,k,b){
   if(a==="areload"){loadAdm();return}
   if(a==="aedit"){ST.edit=v;render();return}
   if(a==="qedit"||a==="fedit"){ST.edit=v;render();return}
+  if(a==="dx"){ST.det=null;render();return}
+  if(a==="hide"){ST.hide=ST.hide?0:1;render();return}
+  if(a==="det"){ST.det={k,id:v};if(k==="l")markOpen(v);if((k==="l"||k==="p")&&!ST.pub.find(y=>y.id===v)){try{const g=await getDoc(doc(db,"qa_published",v));if(g.exists())ST.pub.push(withId(g))}catch(e){}}render();return}
   if(!uid()){toast("আবার লগ ইন করুন",1);return}
+  if(a==="bm"){const had=!!ST.saved[v];if(had)delete ST.saved[v];else ST.saved[v]=Date.now();render();
+    try{if(had)await deleteDoc(doc(db,"users",uid(),"qa_saved",v));else await setDoc(doc(db,"users",uid(),"qa_saved",v),{qid:v,at:Date.now()});toast(had?"সংরক্ষণ সরানো হয়েছে":"সংরক্ষিত হয়েছে")}
+    catch(e){if(had)ST.saved[v]=1;else delete ST.saved[v];render();toast("সম্পন্ন হয়নি",1)}return}
+  if(a==="acc"){try{const g=await getDoc(doc(db,"qa_private",v));ST.accI[v]=g.exists()?g.data():"none"}catch(e){ST.accI[v]="none"}render();return}
   if(ST.busy)return;
   try{
   if(a==="submit"){
     const t=ST.draft.trim();
     if(t.length<8){toast("প্রশ্নটি আরেকটু বিস্তারিত লিখুন",1);return}
+    if(!ST.hide&&ST.qname.trim().length<2){toast("নাম লিখুন অথবা নাম গোপন করুন",1);return}
     if(ST.mine.filter(x=>x.status==="pending").length>=5){toast("আপনার ৫টি প্রশ্ন অপেক্ষমাণ আছে। উত্তর আসার পর নতুন প্রশ্ন করুন",1);return}
     if(!ST.ack&&matches(t,"q").length){ST.ack=1;render();toast("আগে নিচের উত্তরগুলো দেখুন");return}
     ST.busy=1;render();
-    await addDoc(collection(db,"qa_questions"),{uid:uid(),text:t,cat:ST.qcat||"",status:"pending",createdAt:Date.now()});
+    {const id=doc(collection(db,"qa_questions")).id,ac=ST.acc||{},now=Date.now(),w=writeBatch(db);
+    w.set(doc(db,"qa_questions",id),{uid:uid(),text:t,cat:ST.qcat||"অন্যান্য",publicName:ST.hide?"Anonymous":ST.qname.trim().slice(0,60),hideName:!!ST.hide,status:"pending",createdAt:now});
+    w.set(doc(db,"qa_private",id),{uid:uid(),accName:ac.name||"",age:ac.age==null?"":ac.age,gender:ac.gender||"",address:ST.qaddr.trim().slice(0,200),createdAt:now});
+    await w.commit()}
     ST.draft="";ST.ack=0;ST.qcat="";ST.done="q";ST.busy=0;toast("প্রশ্ন জমা হয়েছে");await loadMine();render();return}
   if(a==="fsubmit"){
     const t=ST.fdraft.trim();
@@ -2383,8 +2506,17 @@ async function act(a,v,k,b){
     ST.busy=1;render();
     await addDoc(collection(db,"fatwa_requests"),{uid:uid(),text:t,status:"submitted",createdAt:Date.now()});
     ST.fdraft="";ST.fack=0;ST.done="f";ST.busy=0;toast("মাসআলা জমা হয়েছে");await loadMine();render();return}
-  if(a==="qok"){const c=$("c_"+v).value;await updateDoc(doc(db,"qa_questions",v),{status:"approved",category:c});toast("অনুমোদিত");await loadAdm();return}
-  if(a==="qno"){const r=prompt("বাতিলের কারণ (ঐচ্ছিক)");if(r===null)return;await updateDoc(doc(db,"qa_questions",v),{status:"rejected",rejectReason:(r||"").slice(0,200)});toast("বাতিল করা হয়েছে");await loadAdm();return}
+  if(a==="qsel"){const x=ST.adm.q.find(y=>y.id===v);if(!x)return;const w=writeBatch(db),now=Date.now();
+    w.update(doc(db,"qa_questions",v),{status:"selected",selectedAt:now});
+    w.set(doc(db,"qa_selected",v),{text:x.text,cat:x.cat||x.category||"অন্যান্য",publicName:x.publicName||"Anonymous",createdAt:x.createdAt,selectedAt:now});
+    await w.commit();toast("নির্বাচিত প্রশ্নে যোগ হয়েছে");return}
+  if(a==="qmuf"){await updateDoc(doc(db,"qa_questions",v),{status:"with_mufti",muftiAt:Date.now()});toast("মুফতির কাছে পাঠানো হয়েছে");return}
+  if(a==="mans"){const an=$("mA").value.trim(),nm=$("mN").value.trim();
+    if(an.length<10||nm.length<2){toast("উত্তর ও আপনার নাম লিখুন",1);return}if(!$("mOk").checked){toast("যাচাইয়ের নিশ্চিতকরণে টিক দিন",1);return}
+    try{localStorage.setItem("tz_mufti_name",nm)}catch(_){}
+    await updateDoc(doc(db,"qa_questions",v),{status:"approved",full:an,short:an.slice(0,160),source:$("mR").value.trim().slice(0,400),answerer:nm.slice(0,80),answeredBy:uid(),answeredAt:Date.now()});
+    ST.det=null;render();toast("উত্তর অনুমোদিত হয়েছে");return}
+  if(a==="qno"){const r=prompt("বাতিলের কারণ (ঐচ্ছিক)");if(r===null)return;await updateDoc(doc(db,"qa_questions",v),{status:"rejected",rejectReason:(r||"").slice(0,200)});ST.det=null;toast("বাতিল করা হয়েছে");return}
   if(a==="qans"){const s=$("eS").value.trim(),f=$("eF").value.trim();if(s.length<5||f.length<10){toast("সংক্ষিপ্ত ও সম্পূর্ণ উত্তর লিখুন",1);return}
     await updateDoc(doc(db,"qa_questions",v),{status:"answered",short:s,full:f,source:$("eR").value.trim(),answeredAt:Date.now()});ST.edit="";toast("উত্তর সংরক্ষিত");await loadAdm();return}
   if(a==="publish"){
@@ -2393,8 +2525,8 @@ async function act(a,v,k,b){
     const no=(ST.eps[0]?ST.eps[0].no:0)+1;
     if(!confirm("পর্ব "+bn(no)+" প্রকাশ করবেন? "+bn(sel.length)+"টি প্রশ্নোত্তর সবার জন্য দৃশ্যমান হবে।"))return;
     ST.busy=1;const now=Date.now(),eid="ep"+no,w=writeBatch(db);
-    w.set(doc(db,"qa_episodes",eid),{no,title:"সাপ্তাহিক পর্ব "+no,publishedAt:now,count:sel.length});
-    sel.forEach(x=>{w.set(doc(db,"qa_published",x.id),{question:x.text,short:x.short,full:x.full,source:x.source||"",category:x.category||"",episodeId:eid,episodeNo:no,publishedAt:now});w.update(doc(db,"qa_questions",x.id),{status:"published",episodeId:eid})});
+    w.set(doc(db,"qa_episodes",eid),{no,title:"প্রশ্নোত্তর পর্ব "+pn(no),publishedAt:now,count:sel.length});
+    sel.forEach(x=>{w.set(doc(db,"qa_published",x.id),{question:x.text,short:x.short||x.full.slice(0,160),full:x.full,source:x.source||"",category:x.cat||x.category||"",publicName:x.publicName||"Anonymous",answerer:x.answerer||"",episodeId:eid,episodeNo:no,publishedAt:now});w.update(doc(db,"qa_questions",x.id),{status:"published",episodeId:eid,publishedAt:now});w.delete(doc(db,"qa_selected",x.id))});
     await w.commit();ST.busy=0;toast("পর্ব "+bn(no)+" প্রকাশিত হয়েছে");ST._p=Date.now();await loadPub();await loadAdm();return}
   if(a==="asave"){const s=$("eS").value.trim(),f=$("eF").value.trim();if(s.length<5||f.length<10){toast("উত্তর লিখুন",1);return}
     await updateDoc(doc(db,"qa_published",v),{short:s,full:f,source:$("eR").value.trim()});ST.edit="";toast("সংরক্ষিত");await loadPub();return}
